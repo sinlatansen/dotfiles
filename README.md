@@ -4,4 +4,6 @@
 * 目前配置文件有：
   1. zsh
   2. tmux
+  3. nvim
+  4. neofetch
 
