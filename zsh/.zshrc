@@ -11,12 +11,14 @@ fi
 
 
 # Oh My Zsh
-source $ZSH/oh-my-zsh.sh
 if [[ $(hostname) == "MBP2017" ]]; then
   ZSH_THEME="bira"
   plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 elif [[ $(hostname) == "Cloud" ]]; then
+  # something
 fi
+
+source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias c="code ."
@@ -39,6 +41,7 @@ if [[ $(hostname) == "MBP2017" ]]; then
   alias xserver="defaults write org.xquartz.X11 app_to_run /usr/bin/true && open -a XQuartz"
   alias ut="ssh -X ubuntu@82.156.196.198"
 elif [[ $(hostname) == "Cloud" ]]; then
+  # something
 fi
 
 
@@ -52,4 +55,5 @@ eval $(thefuck --alias f)
 if [[ $(hostname) == "MBP2017" ]]; then
   figlet -c -f larry3d Welcome!
 elif [[ $(hostname) == "Cloud" ]]; then
+  # something
 fi
