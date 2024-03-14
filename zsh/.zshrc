@@ -1,21 +1,41 @@
 # 环境变量
+export ZSH="$HOME/.oh-my-zsh"
+
 if [[ $(hostname) == "MBP2017" ]]; then
+  
   export PATH="$HOME/bin:/usr/local/bin:$PATH"
-  export ZSH="$HOME/.oh-my-zsh"
   export TERM="xterm-256color"
   export RANGER_LOAD_DEFAULT_RC=false
+  
+  # homebrew镜像源
   export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+  
 elif [[ $(hostname) == "Cloud" ]]; then
-  # something
+  
+  # 给root传递
+  export EDITOR="/usr/bin/nvim"
+  
+  # 代理
+  export http_proxy="http://127.0.0.1:7890"
+  export https_proxy="http://127.0.0.1:7890"
+  
+  # X11
+  export DISPLAY=localhost:10.0
+  
 fi
 
 
 # Oh My Zsh
 if [[ $(hostname) == "MBP2017" ]]; then
+  
   ZSH_THEME="bira"
   plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+  
 elif [[ $(hostname) == "Cloud" ]]; then
-  # something
+
+  ZSH_THEME="ys"
+  plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+  
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -26,22 +46,56 @@ alias ..="cd ../"
 alias ..l="cd ../ && ls -a"
 alias ..ll="cd ../ && ls -al"
 
+alias ...='cd ../../..'
+alias ....='cd ../../../..'
+alias .....='cd ../../../..'
+alias .2='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+
 alias zshrc='nvim ~/.zshrc'
 alias update="source ~/.zshrc"
 alias cls="clear"
 alias vim="nvim"
+alias h='history'
 
+alias df='df -h'
+alias md="mkdir "
+
+
+# 连接上次会话
 alias ta="tmux a"
+# 新会话
 alias tn="tmux"
+# 列出所有会话
+alias tls="tmux ls"
+# 删除tmux会话
+alias td0="tmux kill-session -t 0"
+alias td1="tmux kill-session -t 1"
+alias td2="tmux kill-session -t 2"
+alias td3="tmux kill-session -t 3"
+alias td4="tmux kill-session -t 4"
+alias td5="tmux kill-session -t 5"
 
+# 临时开关代理
 alias offclash='unset http_proxy && unset https_proxy all_proxy'
 alias onclash='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
 
 if [[ $(hostname) == "MBP2017" ]]; then
+
+  # 快捷开启XQuartz
   alias xserver="defaults write org.xquartz.X11 app_to_run /usr/bin/true && open -a XQuartz"
+  
   alias ut="ssh -X ubuntu@82.156.196.198"
+
 elif [[ $(hostname) == "Cloud" ]]; then
-  # something
+
+  # typecho
+  alias tgp="cd /www/typecho/usr/themes/butterfly/ && git pull"
+  alias pgp="cd /www/typecho/usr/plugins/ && git pull"
+
 fi
 
 
@@ -55,5 +109,7 @@ eval $(thefuck --alias f)
 if [[ $(hostname) == "MBP2017" ]]; then
   figlet -c -f larry3d Welcome!
 elif [[ $(hostname) == "Cloud" ]]; then
-  # something
+  echo
+  echo
+  figlet -c Hello Ubuntu!
 fi
