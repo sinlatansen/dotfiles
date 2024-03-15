@@ -83,6 +83,14 @@ alias td5="tmux kill-session -t 5"
 alias offclash='unset http_proxy && unset https_proxy all_proxy'
 alias onclash='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
 
+# lsd
+alias ls="lsd"
+alias lsa="lsd -a"
+alias ll='lsd -l --date +%Y年%m月%d"日"%H:%M:%S'
+alias lla='lsd -al --date +%Y年%m月%d"日"%H:%M:%S'
+alias lt="lsd --tree"
+alias lta="lsd -a --tree"
+
 if [[ $(hostname) == "MBP2017" ]]; then
 
   # 快捷开启XQuartz
