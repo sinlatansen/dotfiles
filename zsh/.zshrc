@@ -2,8 +2,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # 代理
-  export http_proxy="http://127.0.0.1:7890"
-  export https_proxy="http://127.0.0.1:7890"
+export http_proxy="http://127.0.0.1:7890"
+export https_proxy="http://127.0.0.1:7890"
 
 if [[ $(hostname) == "MBP2017" ]]; then
   
@@ -19,18 +19,22 @@ elif [[ $(hostname) == "Cloud" ]]; then
   # 给root传递
   export EDITOR="/usr/bin/nvim"
   
-    # X11
+  # X11
   export DISPLAY=localhost:10.0
-  
-fi
 
+  # nvm
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 # Oh My Zsh
 if [[ $(hostname) == "MBP2017" ]]; then
   
   ZSH_THEME="bira"
   plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-  
+  eval "$(lua $HOME/.oh-my-zsh/custom/plugins/zlua/z.lua --init zsh)"
+
 elif [[ $(hostname) == "Cloud" ]]; then
 
   ZSH_THEME="ys"
@@ -38,7 +42,6 @@ elif [[ $(hostname) == "Cloud" ]]; then
   
 fi
 
-eval "$(lua $HOME/.oh-my-zsh/custom/plugins/zlua/z.lua --init zsh)"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -134,3 +137,4 @@ elif [[ $(hostname) == "Cloud" ]]; then
   echo
   figlet -c Hello Ubuntu!
 fi
+
