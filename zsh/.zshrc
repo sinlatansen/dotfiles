@@ -86,17 +86,22 @@ alias onclash='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.
 # lsd
 alias ls="lsd"
 alias lsa="lsd -a"
-alias ll='lsd -l --date +%Y年%m月%d"日"%H:%M:%S'
-alias lla='lsd -al --date +%Y年%m月%d"日"%H:%M:%S'
 alias lt="lsd --tree"
 alias lta="lsd -a --tree"
+
+# lazygit
+alias lg="lazygit"
 
 if [[ $(hostname) == "MBP2017" ]]; then
 
   # 快捷开启XQuartz
   alias xserver="defaults write org.xquartz.X11 app_to_run /usr/bin/true && open -a XQuartz"
-  
+
   alias ut="ssh -X ubuntu@82.156.196.198"
+
+  # lsd 长日期
+  alias ll='lsd -l --date +%Y年%m月%d"日"%H:%M:%S'
+  alias lla='lsd -al --date +%Y年%m月%d"日"%H:%M:%S'
 
 elif [[ $(hostname) == "Cloud" ]]; then
 
@@ -104,6 +109,9 @@ elif [[ $(hostname) == "Cloud" ]]; then
   alias tgp="cd /www/typecho/usr/themes/butterfly/ && git pull"
   alias pgp="cd /www/typecho/usr/plugins/ && git pull"
 
+  # lsd 
+  alias ll='lsd -l'
+  alias lla='lsd -al'
 fi
 
 
