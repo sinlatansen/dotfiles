@@ -38,6 +38,8 @@ elif [[ $(hostname) == "Cloud" ]]; then
   
 fi
 
+eval "$(lua $HOME/.oh-my-zsh/custom/plugins/zlua/z.lua --init zsh)"
+
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
