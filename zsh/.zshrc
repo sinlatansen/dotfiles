@@ -92,6 +92,8 @@ alias lta="lsd -a --tree"
 
 # lazygit
 alias lg="lazygit"
+# dotfiles
+alias dt="cd ~/dotfiles && lsa"
 
 if [[ $(hostname) == "MBP2017" ]]; then
 
