@@ -1,6 +1,10 @@
 # 环境变量
 export ZSH="$HOME/.oh-my-zsh"
 
+# 代理
+  export http_proxy="http://127.0.0.1:7890"
+  export https_proxy="http://127.0.0.1:7890"
+
 if [[ $(hostname) == "MBP2017" ]]; then
   
   export PATH="$HOME/bin:/usr/local/bin:$PATH"
@@ -15,11 +19,7 @@ elif [[ $(hostname) == "Cloud" ]]; then
   # 给root传递
   export EDITOR="/usr/bin/nvim"
   
-  # 代理
-  export http_proxy="http://127.0.0.1:7890"
-  export https_proxy="http://127.0.0.1:7890"
-  
-  # X11
+    # X11
   export DISPLAY=localhost:10.0
   
 fi
@@ -59,6 +59,7 @@ alias zshrc='nvim ~/.zshrc'
 alias update="source ~/.zshrc"
 alias cls="clear"
 alias vim="nvim"
+alias n="nvim"
 alias h='history'
 
 alias df='df -h'
