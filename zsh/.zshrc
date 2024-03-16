@@ -148,11 +148,16 @@ eval $(thefuck --alias f)
 
 # Welcome message
 if [[ $(hostname) == "MBP2017" ]]; then
+
   figlet -c -f larry3d Welcome!
+  fortune
+
 elif [[ $(hostname) == "Cloud" ]]; then
+
   echo
   echo
   figlet -c Hello Ubuntu!
+  fortune
 
 elif [[ $(hostname) == "Y9000P" ]]; then
   ~
