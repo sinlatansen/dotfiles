@@ -32,6 +32,13 @@ elif [[ $(hostname) == "Y9000P" ]]; then
   host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
   export http_proxy="http://$host_ip:7890"
   export https_proxy="http://$host_ip:7890"
+
+  # X11
+  export DISPLAY=$host_ip:0
+  
+  # neovim
+  export PATH="/opt/nvim/bin:$PATH"
+
 fi
 
 # Oh My Zsh
@@ -50,7 +57,7 @@ elif [[ $(hostname) == "Y9000P" ]]; then
   
 fi
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting copyfile copypath)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting copyfile copypath sudo)
 
 source $ZSH/oh-my-zsh.sh
 
