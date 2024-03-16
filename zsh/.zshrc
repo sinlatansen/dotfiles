@@ -1,5 +1,6 @@
 # 环境变量
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
 # 代理
 export http_proxy="http://127.0.0.1:7890"
@@ -7,7 +8,6 @@ export https_proxy="http://127.0.0.1:7890"
 
 if [[ $(hostname) == "MBP2017" ]]; then
   
-  export PATH="$HOME/bin:/usr/local/bin:$PATH"
   export TERM="xterm-256color"
   export RANGER_LOAD_DEFAULT_RC=false
   
@@ -27,29 +27,30 @@ elif [[ $(hostname) == "Cloud" ]]; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-elif [[ $(hostname) == "Cloud" ]]; then
-
+elif [[ $(hostname) == "Y9000P" ]]; then
+  # 代理
+  host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+  export http_proxy="http://$host_ip:7890"
+  export https_proxy="http://$host_ip:7890"
 fi
 
 # Oh My Zsh
 if [[ $(hostname) == "MBP2017" ]]; then
   
   ZSH_THEME="bira"
-  plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
   eval "$(lua $HOME/.oh-my-zsh/custom/plugins/zlua/z.lua --init zsh)"
 
-elif [[ $(hostname) == "Y900P" ]]; then
+elif [[ $(hostname) == "Cloud" ]]; then
+
+  ZSH_THEME="ys"
+  
+elif [[ $(hostname) == "Y9000P" ]]; then
 
   ZSH_THEME="eastwood"
-  plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
   
-  # 代理
-  host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
-  export http_proxy="http://$host_ip:7890"
-  export https_proxy="http://$host_ip:7890"
-
 fi
 
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting copyfile copypath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -145,9 +146,7 @@ elif [[ $(hostname) == "Cloud" ]]; then
   echo
   figlet -c Hello Ubuntu!
 
-elif [[ $(hostname) == "Cloud" ]]; then
-    echo
-    echo
-    echo "Hello Debian!\n"
+elif [[ $(hostname) == "Y9000P" ]]; then
+  fortune | pokemonsay
 fi
 
