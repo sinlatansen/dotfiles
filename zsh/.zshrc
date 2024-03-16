@@ -26,6 +26,9 @@ elif [[ $(hostname) == "Cloud" ]]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+elif [[ $(hostname) == "Cloud" ]]; then
+
 fi
 
 # Oh My Zsh
@@ -35,11 +38,16 @@ if [[ $(hostname) == "MBP2017" ]]; then
   plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
   eval "$(lua $HOME/.oh-my-zsh/custom/plugins/zlua/z.lua --init zsh)"
 
-elif [[ $(hostname) == "Cloud" ]]; then
+elif [[ $(hostname) == "Y900P" ]]; then
 
-  ZSH_THEME="ys"
+  ZSH_THEME="eastwood"
   plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
   
+  # 代理
+  host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+  export http_proxy="http://$host_ip:7890"
+  export https_proxy="http://$host_ip:7890"
+
 fi
 
 
@@ -100,6 +108,10 @@ alias lg="lazygit"
 # dotfiles
 alias dt="cd ~/dotfiles && lsa"
 
+# lsd
+alias ll='lsd -l'
+alias lla='lsd -al'
+
 if [[ $(hostname) == "MBP2017" ]]; then
 
   # 快捷开启XQuartz
@@ -117,15 +129,11 @@ elif [[ $(hostname) == "Cloud" ]]; then
   alias tgp="cd /www/typecho/usr/themes/butterfly/ && git pull"
   alias pgp="cd /www/typecho/usr/plugins/ && git pull"
 
-  # lsd 
-  alias ll='lsd -l'
-  alias lla='lsd -al'
 fi
 
 
 # 避免粘贴格式损坏
 DISABLE_MAGIC_FUNCTIONS="true"
-# Additional configuration
 
 eval $(thefuck --alias f)
 
@@ -136,5 +144,10 @@ elif [[ $(hostname) == "Cloud" ]]; then
   echo
   echo
   figlet -c Hello Ubuntu!
+
+elif [[ $(hostname) == "Cloud" ]]; then
+    echo
+    echo
+    echo "Hello Debian!\n"
 fi
 
