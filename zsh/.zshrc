@@ -81,6 +81,7 @@ alias update="source ~/.zshrc"
 alias cls="clear"
 alias vim="nvim"
 alias n="nvim"
+alias n.="nvim ."
 alias h='history'
 
 alias df='df -h'
@@ -154,6 +155,7 @@ elif [[ $(hostname) == "Cloud" ]]; then
   figlet -c Hello Ubuntu!
 
 elif [[ $(hostname) == "Y9000P" ]]; then
+  ~
   fortune | pokemonsay
 fi
 
