@@ -107,8 +107,9 @@ alias offclash='unset http_proxy && unset https_proxy all_proxy'
 alias onclash='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
 
 # lsd
-alias lsa="ls -a"
-alias lsad="lsd -a"
+alias bls="/bin/ls"
+alias ls="lsd"
+alias lsa="lsd -a"
 alias lt="lsd --tree"
 alias lta="lsd -a --tree"
 
@@ -118,8 +119,9 @@ alias lg="lazygit"
 alias dt="cd ~/dotfiles && lsa"
 
 # lsd
-alias lld='lsd -l'
-alias llad='lsd -al'
+alias bll="/bin/ls -al"
+alias ll='lsd -l'
+alias lla='lsd -al'
 
 if [[ $(hostname) == "lzy-MacBookPro" ]]; then
 
