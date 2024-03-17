@@ -102,6 +102,12 @@ alias td2="tmux kill-session -t 2"
 alias td3="tmux kill-session -t 3"
 alias td4="tmux kill-session -t 4"
 alias td5="tmux kill-session -t 5"
+# 自动重命名插件
+tmux-window-name() {
+	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+}
+add-zsh-hook chpwd tmux-window-name
+
 
 # 临时开关代理
 alias offclash='unset http_proxy && unset https_proxy all_proxy'
