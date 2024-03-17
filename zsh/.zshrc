@@ -29,7 +29,7 @@ elif [[ $(hostname) == "Cloud" ]]; then
 
 elif [[ $(hostname) == "Y9000P" ]]; then
   # 代理
-  host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+  export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
   export http_proxy="http://$host_ip:7890"
   export https_proxy="http://$host_ip:7890"
 
@@ -82,6 +82,7 @@ alias cls="clear"
 alias vim="nvim"
 alias n="nvim"
 alias n.="nvim ."
+alias nc="n ~/.config/nvim/"
 alias h='history'
 
 alias df='df -h'
