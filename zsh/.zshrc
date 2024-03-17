@@ -160,7 +160,6 @@ elif [[ $(hostname) == "Cloud" ]]; then
   fortune
 
 elif [[ $(hostname) == "Y9000P" ]]; then
-  ~
   fortune | pokemonsay
 fi
 
