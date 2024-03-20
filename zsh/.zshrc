@@ -13,6 +13,8 @@ if [[ $(hostname) == "lzy-MacBookPro" ]]; then
   
   # homebrew镜像源
   # export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+
+  export https_proxy=http://127.0.0.1:33210 http_proxy=http://127.0.0.1:33210 all_proxy=socks5://127.0.0.1:33211
   
 elif [[ $(hostname) == "Cloud" ]]; then
   
