@@ -6,7 +6,7 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export http_proxy="http://127.0.0.1:7890"
 export https_proxy="http://127.0.0.1:7890"
 
-if [[ $(hostname) == "lzy-MacBookPro" ]]; then
+if [[ $(hostname) == "MacBookPro" ]]; then
   
   export TERM="xterm-256color"
   export RANGER_LOAD_DEFAULT_RC=false
@@ -44,9 +44,9 @@ elif [[ $(hostname) == "Y9000P" ]]; then
 fi
 
 # Oh My Zsh
-if [[ $(hostname) == "lzy-MacBookPro" ]]; then
+if [[ $(hostname) == "MacBookPro" ]]; then
   
-  ZSH_THEME="bira"
+  ZSH_THEME="re5et"
   # eval "$(lua $HOME/.oh-my-zsh/custom/plugins/zlua/z.lua --init zsh)"
 
 elif [[ $(hostname) == "Cloud" ]]; then
@@ -132,7 +132,7 @@ alias bll="/bin/ls -al"
 alias ll='lsd -l'
 alias lla='lsd -al'
 
-if [[ $(hostname) == "lzy-MacBookPro" ]]; then
+if [[ $(hostname) == "MacBookPro" ]]; then
 
   # 快捷开启XQuartz
   alias xserver="defaults write org.xquartz.X11 app_to_run /usr/bin/true && open -a XQuartz"
@@ -158,7 +158,7 @@ DISABLE_MAGIC_FUNCTIONS="true"
 eval $(thefuck --alias f)
 
 # Welcome message
-if [[ $(hostname) == "MBP2017" ]]; then
+if [[ $(hostname) == "MacBookPro" ]]; then
 
   # figlet -c -f larry3d Welcome!
   # fortune
