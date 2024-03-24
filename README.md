@@ -8,5 +8,8 @@
   2. tmux
   3. nvim
   4. neofetch
+  5. yabai
+  6. skhd
+  7. sketchybar
 
 - `stow.sh`脚本可以一键更新链接
