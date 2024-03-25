@@ -13,3 +13,12 @@
   7. sketchybar
 
 - `stow.sh`脚本可以一键更新链接
+
+
+
+## sketchybar
+
+[FelixKratz/dotfiles，地址：0619040a8eebbf9896c5ce4fc9d312270426ed8f --- FelixKratz/dotfiles at 0619040a8eebbf9896c5ce4fc9d312270426ed8f (github.com)](https://github.com/FelixKratz/dotfiles/tree/0619040a8eebbf9896c5ce4fc9d312270426ed8f)
+
+感谢这位好心人提供了方便的一键安装脚本，就可以用到他的好看的配置。
+
