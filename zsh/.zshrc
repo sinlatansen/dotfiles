@@ -20,8 +20,6 @@ elif [[ $(hostname) == "Cloud" ]]; then
   
   # 给root传递
   export EDITOR="/usr/bin/nvim"
-  alias sudo="sudo -e"
-  alias sn="sudo -e nvim"
   
   # X11
   export DISPLAY=localhost:10.0
