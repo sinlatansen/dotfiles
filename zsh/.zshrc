@@ -126,6 +126,10 @@ alias bll="/bin/ls -al"
 alias ll='lsd -l'
 alias lla='lsd -al'
 
+# github copliot
+alias ghcs="gh copilot suggest"
+alias ghce="gh copilot explain"
+
 if [[ $(hostname) == "MacBookPro" ]]; then
 
   # 快捷开启XQuartz
@@ -150,8 +154,6 @@ fi
 DISABLE_MAGIC_FUNCTIONS="true"
 
 eval $(thefuck --alias f)
-
-eval "$(github-copilot-cli alias -- "$0")"
 
 # Welcome message
 if [[ $(hostname) == "MacBookPro" ]]; then

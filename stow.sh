@@ -5,9 +5,9 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/neofetch
 mkdir -p ~/.config/tmux-powerline
 if [[ $(hostname) == "MacBookPro" ]]; then
-    mkdir -p ~/.config/yabai
-    mkdir -p ~/.config/skhd
-    mkdir -p ~/.config/sketchybar
+	mkdir -p ~/.config/yabai
+	mkdir -p ~/.config/skhd
+	mkdir -p ~/.config/sketchybar
 	echo "Something of MacBookPro done."
 fi
 
