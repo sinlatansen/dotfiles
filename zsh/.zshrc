@@ -151,6 +151,8 @@ DISABLE_MAGIC_FUNCTIONS="true"
 
 eval $(thefuck --alias f)
 
+eval "$(github-copilot-cli alias -- "$0")"
+
 # Welcome message
 if [[ $(hostname) == "MacBookPro" ]]; then
 
