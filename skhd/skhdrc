@@ -1,3 +1,10 @@
+# Yabai配置
+# alt相关都是切换焦点
+# shift + alt相关都是改变布局
+# ctrl + alt相关都是移动窗口
+# alt + 数字相关都是移动窗口到指定space
+# ctrl + alt + q/s/r相关都是停止/启动/重启yabai
+
 # -- Changing Window Focus --
 
 # change window focus within space
@@ -13,6 +20,7 @@ alt - g: yabai -m display --focus east
 # -- Modifying the Layout --
 
 # rotate layout clockwise
+# 旋转布局
 shift + alt - r : yabai -m space --rotate 270
 
 # flip along y-axis
@@ -31,6 +39,7 @@ shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 shift + alt - m : yabai -m window --toggle zoom-fullscreen
 
 # balance out tree of windows (resize to occupy same area)
+# 撤销鼠标拖动窗口大小
 shift + alt - e : yabai -m space --balance
 
 # -- Moving Windows Around --
@@ -64,6 +73,8 @@ shift + alt - 4 : yabai -m window --space 4;
 shift + alt - 5 : yabai -m window --space 5;
 shift + alt - 6 : yabai -m window --space 6;
 shift + alt - 7 : yabai -m window --space 7;
+shift + alt - 8 : yabai -m window --space 8;
+shift + alt - 9 : yabai -m window --space 9;
 
 # -- Starting/Stopping/Restarting Yabai --
 
