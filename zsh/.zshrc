@@ -141,6 +141,10 @@ if [[ $(hostname) == "MacBookPro" ]]; then
   alias ll='lsd -l --date +%Y年%m月%d"日"%H:%M:%S'
   alias lla='lsd -al --date +%Y年%m月%d"日"%H:%M:%S'
 
+  # taskbar
+  alias start="brew services start sketchybar"
+  alias stop="brew services stop sketchybar"
+
 elif [[ $(hostname) == "Cloud" ]]; then
 
   # typecho
