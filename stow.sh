@@ -17,6 +17,7 @@ cd ~/dotfiles
 # 使用 stow 链接配置
 stow -R zsh
 stow -R tmux
+stow -R clang-format
 stow -R --target=$HOME/.config/nvim nvim
 stow -R --target=$HOME/.config/neofetch neofetch
 stow -R --target=$HOME/.config/tmux-powerline tmux-powerline
