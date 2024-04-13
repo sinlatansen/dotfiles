@@ -130,6 +130,9 @@ alias lla='lsd -al'
 alias ghcs="gh copilot suggest"
 alias ghce="gh copilot explain"
 
+# makefile
+alias gm="cp ~/dotfiles/makefile/makefile ."
+
 if [[ $(hostname) == "MacBookPro" ]]; then
 
   # 快捷开启XQuartz
