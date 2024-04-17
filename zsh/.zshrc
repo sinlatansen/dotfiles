@@ -132,6 +132,7 @@ alias ghce="gh copilot explain"
 
 # makefile
 alias gm="cp ~/dotfiles/makefile/makefile ."
+alias gM="cp ~/dotfiles/makefile/makefile Makefile"
 
 if [[ $(hostname) == "MacBookPro" ]]; then
 
