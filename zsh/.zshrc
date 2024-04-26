@@ -3,8 +3,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
 # 代理
-export http_proxy="http://127.0.0.1:7890"
-export https_proxy="http://127.0.0.1:7890"
+export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+export http_proxy="http://$host_ip:7890"
+export https_proxy="http://$host_ip:7890"
 
 if [[ $(hostname) == "MacBookPro" ]]; then
   
@@ -42,6 +43,8 @@ elif [[ $(hostname) == "Y9000P" ]]; then
   export PATH="/opt/nvim/bin:$PATH"
 
 fi
+
+ZSH_THEME="eastwood"
 
 # Oh My Zsh
 if [[ $(hostname) == "MacBookPro" ]]; then
