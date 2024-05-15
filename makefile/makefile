@@ -9,7 +9,7 @@ SRCS = $(wildcard *.c)
 OBJS = $(patsubst %c, %o, $(SRCS))
 
 # 可执行文件的名字
-TARGET = main
+TARGET = build/main
 
 # .PHONE伪目标，具体含义百度一下一大堆介绍
 .PHONY:all clean
@@ -17,10 +17,14 @@ TARGET = main
 # 要生成的目标文件
 all: $(TARGET)
 
+LDFLAGS=-L/usr/local/lib
+
+# LDLIBS=-lqueue -lllist
+
 # 第一行依赖关系：冒号后面为依赖的文件，相当于Hello: main.o a.o b.o
 # 第二行规则：$@表示目标文件，$^表示所有依赖文件，$<表示第一个依赖文件
 $(TARGET): $(OBJS)
-	$(LD) -o $@ $^
+	$(LD) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 # 上一句目标文件依赖一大堆.o文件，这句表示所有.o都由相应名字的.c文件自动生成
 %.o:%.c

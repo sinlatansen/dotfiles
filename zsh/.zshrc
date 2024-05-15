@@ -80,6 +80,8 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
+# 用trash代替rm
+alias rm="trash"
 
 alias zshrc='nvim ~/.zshrc'
 alias update="source ~/.zshrc"
@@ -136,6 +138,11 @@ alias ghce="gh copilot explain"
 # makefile
 alias gm="cp ~/dotfiles/makefile/makefile ."
 alias gM="cp ~/dotfiles/makefile/makefile Makefile"
+
+# 删除可执行文件
+alias findx="find . -type f -executable -print"
+alias cleanx="find . -type f -executable -exec trash {} +
+"
 
 if [[ $(hostname) == "MacBookPro" ]]; then
 
