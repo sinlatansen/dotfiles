@@ -6,30 +6,34 @@ LD = gcc
 SRCS = $(wildcard *.c)
 
 # OBJS表示SRCS中把列表中的.c全部替换为.o，相当于：OBJS = main.o a.o b.o
-OBJS = $(patsubst %c, %o, $(SRCS))
+OBJS = $(patsubst %.c, %.o, $(SRCS))
 
 # 可执行文件的名字
 TARGET = build/main
 
-# .PHONE伪目标，具体含义百度一下一大堆介绍
-.PHONY:all clean
+# .PHONY伪目标，具体含义百度一下一大堆介绍
+.PHONY: all clean build
 
 # 要生成的目标文件
-all: $(TARGET)
+all: build $(TARGET)
 
-LDFLAGS=-L/usr/local/lib
+LDFLAGS = -L/usr/local/lib
 
 # LDLIBS=-lqueue -lllist
 
-# 第一行依赖关系：冒号后面为依赖的文件，相当于Hello: main.o a.o b.o
-# 第二行规则：$@表示目标文件，$^表示所有依赖文件，$<表示第一个依赖文件
+# 目标文件的依赖关系和规则
 $(TARGET): $(OBJS)
 	$(LD) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
-# 上一句目标文件依赖一大堆.o文件，这句表示所有.o都由相应名字的.c文件自动生成
-%.o:%.c
+# 所有 .o 文件由相应名字的 .c 文件生成
+%.o: %.c
 	$(CC) -c $^
 
-# make clean删除所有.o和目标文件
+# 创建 build 目录
+build:
+	mkdir -p build
+
+# make clean 删除所有 .o 和目标文件
 clean:
 	rm -f $(OBJS) $(TARGET)
+	rm -rf build
