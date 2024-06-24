@@ -25,7 +25,6 @@ stow -R --target=$HOME/.config/tmux-powerline tmux-powerline
 if [[ $(hostname) == "MacBookPro" ]]; then
 	stow -R --target=$HOME/.config/yabai yabai
 	stow -R --target=$HOME/.config/skhd skhd
-	stow -R --target=$HOME/.config/sketchybar sketchybar
 	echo "Something of MacBookPro done."
 fi
 

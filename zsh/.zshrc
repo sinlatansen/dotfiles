@@ -159,6 +159,12 @@ if [[ $(hostname) == "MacBookPro" ]]; then
   alias start="brew services start sketchybar"
   alias stop="brew services stop sketchybar"
 
+  # gcc
+  alias gcc="gcc-14"
+  alias cc="gcc-14"
+  alias g++="g++-14"
+  alias c++="c++-14"
+
 elif [[ $(hostname) == "Cloud" ]]; then
 
   # typecho
