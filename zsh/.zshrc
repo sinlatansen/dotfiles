@@ -42,6 +42,10 @@ elif [[ $(hostname) == "Y9000P" ]]; then
   # neovim
   export PATH="/opt/nvim/bin:$PATH"
 
+  # zoxide
+  export PATH="$PATH:/home/lzy/.local/bin"
+  eval "$(zoxide init zsh)"
+
 fi
 
 ZSH_THEME="eastwood"
@@ -139,10 +143,19 @@ alias ghce="gh copilot explain"
 alias gm="cp ~/dotfiles/makefile/makefile ."
 alias gM="cp ~/dotfiles/makefile/makefile Makefile"
 
-# 删除可执行文件
-alias findx="find . -type f -executable -print"
-alias cleanx="find . -type f -executable -exec trash {} +
-"
+# 删除指定目录下可执行文件
+findx() {
+  find "${1:-.}" -type f -executable -print
+}
+cleanx() {
+  find "${1:-.}" -type f -executable -print0 | xargs -0 trash
+}
+
+# 格式化指定目录下所有.c,.h代码
+fmt() {
+  find "${1:-.}" -iname '*.h' -o -iname '*.c' | xargs clang-format -i
+}
+
 
 if [[ $(hostname) == "MacBookPro" ]]; then
 
