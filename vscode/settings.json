@@ -1,0 +1,859 @@
+{
+    // 编辑器格式化设置
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.fontFamily": "FiraCode Nerd Font, Source Han Sans CN VF",
+        "editor.fontWeight": "450"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.rulers": [
+            80
+        ],
+    },
+    "[cpp]": {
+        "editor.rulers": [
+            80
+        ],
+    },
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 80, AccessModifierOffset: -4, NamespaceIndentation: All, FixNamespaceComments: false }",
+    "[html]": {
+        "editor.fontFamily": "FiraCode Nerd Font, Source Han Sans CN VF",
+        "editor.fontWeight": "450"
+    },
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.fontFamily": "FiraCode Nerd Font, Source Han Sans CN VF",
+        "editor.fontWeight": "450"
+    },
+    "[vue]": {
+        "editor.fontFamily": "FiraCode Nerd Font, Source Han Sans CN VF",
+        "editor.fontWeight": "450"
+    },
+    "[css]": {
+        "editor.fontFamily": "FiraCode Nerd Font, Source Han Sans CN VF",
+        "editor.fontWeight": "450"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[makefile]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
+        "editor.detectIndentation": false
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // 编辑器视觉效果设置
+    "editor.lineNumbers": "on",
+    "editor.cursorBlinking": "smooth",
+    "editor.mouseWheelZoom": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.suggestSelection": "first",
+    "editor.rename.enablePreview": false,
+    "editor.quickSuggestions": {
+        "strings": "on",
+        "other": "on",
+        "comments": "on"
+    },
+    "editor.minimap.enabled": false,
+    "diffEditor.wordWrap": "off",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+    "breadcrumbs.filePath": "last",
+    "explorer.compactFolders": false,
+    "editor.lightbulb.enabled": "off",
+    "editor.wordWrap": "off",
+    "apc.font.family": " PingFang SC",
+    "window.menuBarVisibility": "compact",
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "window.titleBarStyle": "native",
+    "apc.electron": {
+        "titleBarStyle": "hidden",
+        "opacity": 0.98
+    },
+    "apc.activityBar": {
+        "position": "bottom",
+        "size": 26,
+        "itemMargin": 4,
+        "itemSize": 28
+    },
+    "apc.menubar.compact": true,
+    "apc.statusBar": {
+        "position": "editor-bottom",
+        "height": 26,
+        "fontSize": 12
+    },
+    "apc.header": {
+        "height": 36
+    },
+    "apc.sidebar.titlebar": {
+        "height": 36
+    },
+    "apc.listRow": {
+        "height": 25,
+        "fontSize": 13,
+        "lists": [
+            "customview-tree",
+            "results",
+            "open-editors",
+            "explorer-folders-view",
+            "outline-tree",
+            "scm-view",
+            "debug-view-content",
+            "debug-breakpoints",
+            "customview-tree",
+            "quick-input-list"
+            // "tree"
+        ]
+    },
+    // quick-input 居中浮动
+    "apc.stylesheet": {
+        ".quick-input-widget.show-file-icons": {
+            "top": "20% !important"
+        },
+        ".quick-input-widget.show-file-icons .quick-input-header": {
+            "padding": "0 0 12px 0 !important"
+        },
+        ".quick-input-widget.show-file-icons .monaco-inputbox": {
+            "border-radius": "8px 8px 0 0 !important"
+        },
+        ".quick-input-widget.show-file-icons .monaco-inputbox.synthetic-focus": {
+            "outline": "none !important"
+        },
+        ".quick-input-widget.show-file-icons .monaco-inputbox input": {
+            "padding": "12px 16px !important",
+            "font-size": "16px !important"
+        },
+        ".quick-input-list .monaco-scrollable-element": {
+            "padding": "0 12px !important"
+        },
+        ".quick-input-action": {
+            "display": "none !important"
+        }
+    },
+    // 光标和滚动
+    "editor.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "workbench.list.smoothScrolling": true,
+    // 编辑器字体设置
+    "editor.fontFamily": "Cascadia Code,Lilex,Roboto Mono,FiraCode Nerd Font Mono, Monaspace Argon,IBM PLEX MONO ,  Source Han Sans CN VF",
+    // "editor.fontFamily": " GoMono Nerd Font Mono, PT Mono,NotoSerifSC",
+    "editor.fontWeight": "350",
+    "editor.fontSize": 14,
+    // 关键字形态
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "entity.name.function"
+                ],
+                "settings": {
+                    "fontStyle": "bold"
+                    // "fontStyle": "underline"
+                }
+            },
+            {
+                "scope": [
+                    "keyword.control",
+                    "string",
+                    "entity.name.type",
+                    "storage.type"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": [
+                    "comment",
+                    "variable.parameter",
+                    "storage.modifier"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+        ]
+    },
+    // "editor.fontLigatures": true,
+    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'calt' ",
+    "editor.fontVariations": false,
+    "editor.lineHeight": 1.3,
+    "editor.guides.bracketPairs": "active",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+    // 文件编码和自动保存
+    "files.autoSave": "onWindowChange",
+    "files.autoGuessEncoding": true,
+    "[matlab]": {
+        "files.encoding": "windows1252",
+        "editor.defaultFormatter": "AffenWiesel.matlab-formatter"
+    },
+    //----------------------------------------------------------------
+    // theme
+    "workbench.iconTheme": "moxer-icons",
+    "workbench.settings.applyToAllProfiles": [
+        "autoDarkMode.darkTheme",
+        "autoDarkMode.lightTheme",
+        "editor.fontFamily"
+    ],
+    "workbench.preferredDarkColorTheme": "Gruvbox Dark Soft",
+    "workbench.preferredLightColorTheme": "Solarized Light",
+    "workbench.colorTheme": "Solarized Light",
+    "window.zoomLevel": 1,
+    "window.dialogStyle": "custom",
+    "window.autoDetectColorScheme": true,
+    // Keil助手插件设置
+    "python.defaultInterpreterPath": "C:\\Users\\y9000p\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+    "KeilAssistant.MDK.Uv4Path": "C:\\Keil_v5\\UV4\\UV4.exe",
+    // Google 翻译插件设置
+    "vscodeGoogleTranslate.HoverTranslations": true,
+    "vscodeGoogleTranslate.preferredLanguage": "Chinese (Simplified)",
+    "vscodeGoogleTranslate.proxyHost": "120.0.0.1",
+    "vscodeGoogleTranslate.proxyPassword": "8080",
+    "vscodeGoogleTranslate.proxyPort": "admin",
+    "vscodeGoogleTranslate.proxyUsername": "password",
+    // STM32 设置
+    "stm32-for-vscode.makePath": "E:\\MINGW64\\BIN\\MAKE.EXE",
+    "stm32-for-vscode.armToolchainPath": "E:\\mingw64\\bin\\gcc.exe",
+    "stm32-for-vscode.openOCDPath": "E:\\OPENOCD\\BIN\\OPENOCD.EXE",
+    "STM32VSCodeExtension.projectCreator.executablePath": "e:\\STM32CubeMX\\STM32CubeMX.exe",
+    // CMake 设置
+    "cmake.configureOnOpen": true,
+    "cmake.showOptionsMovedNotification": false,
+    // Cortex-Debug 插件设置
+    "cortex-debug.armToolchainPath": "C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\12.3 Rel1\\bin",
+    "cortex-debug.openocdPath": "E:\\OpenOCD-20211118-0.11.0\\bin\\openocd.exe",
+    "cortex-debug.gdbPath": "C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\12.3 Rel1\\bin\\arm-none-eabi-gdb",
+    // "cortex-debug.gdbPath.windows": "C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\12.3 rel1\\bin\\arm-none-eabi-gdb.exe",
+    "cortex-debug.stlinkPath": "C:\\ST\\STM32CubeIDE_1.8.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltools.stlink-gdb-server.win32_2.0.100.202109301221\\tools\\bin\\ST-LINK_gdbserver.exe",
+    // LaTeX Workshop 插件设置
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            // "command": "biber",
+            "args": [
+                // "%DOC%"
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex",
+            "tools": [
+                "pdflatex",
+                "bibtex"
+            ]
+        },
+        // {
+        //     "name": "pdflatex -> bibtex -> pdflatex*2",
+        //     "tools": [
+        //         "pdflatex",
+        //         "bibtex",
+        //         "pdflatex",
+        //         "pdflatex"
+        //     ]
+        // },
+        {
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk"
+    ],
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "code-runner.executorMap": {
+        "matlab": "cd $dir && matlab -nosplash -nodesktop -r $fileNameWithoutExt",
+    },
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "matlab.mlintpath": "E:\\MATLAB 2020a\\bin\\matlab.exe",
+    "matlab.linterEncoding": "",
+    "files.associations": {
+        "*.m": "matlab",
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "*.h": "c"
+    },
+    "matlab-interactive-terminal.pythonPath": "C:\\Users\\y9000p\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+    // Vim 插件设置
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-K>"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "workbench.action.files.save"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "lineBreakInsert"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "g",
+                "_"
+            ]
+        },
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "5",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "5",
+                "k"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "5",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "5",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "g",
+                "_"
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-b>": false,
+        "<C-s>": false,
+        "<C-z>": false,
+        "<C-j>": false,
+        "<C-p>": false,
+        "<C-w>": false,
+        "<C-]>": false,
+        "<C-[>": false,
+        "<A-z>": false,
+        "<C-t>": false
+    },
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    // 小程序开发插件设置
+    "emmet.includeLanguages": {
+        "wxml": "html"
+    },
+    "minapp-vscode.disableAutoConfig": true,
+    "minapp-vscode.wxmlFormatter": "prettier",
+    "minapp-vscode.prettier": {
+        "useTabs": false,
+        "tabWidth": 4,
+        "printWidth": 100,
+        "singleQuote": false
+    },
+    "wxmlConfig.activeColor": {
+        "color": "blue"
+    },
+    "wxmlConfig.format": {
+        "brace_style": "collapse",
+        "end_with_newline": false,
+        "indent_char": "",
+        "indent_handlebars": false,
+        "indent_inner_html": false,
+        "indent_scripts": "keep",
+        "indent_size": 2,
+        "indent_with_tabs": true,
+        "max_preserve_newlines": 1,
+        "wrap_attributes_count": 4,
+        "unformatted": "['text']",
+        "disable_automatic_closing_labels": false,
+        "preserve_newlines": true,
+        "wrap_attributes": "force-expand-multiline"
+    },
+    "wxmlConfig.onSaveFormat": false,
+    // 终端设置
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+    "terminal.external.windowsExec": "%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono, Source Han Sans CN VF",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontWeight": "500",
+    // Git 设置
+    "git.ignoreMissingGitWarning": true,
+    "git.openRepositoryInParentFolders": "always",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "git.suggestSmartCommit": false,
+    "gitlens.gitCommands.skipConfirmations": [
+        "fetch:command",
+        "stash-push:command",
+        "switch:command",
+        "focus:command"
+    ],
+    "git-graph.graph.colours": [
+        "#fabb55",
+        "#58a9db",
+        "#d99191",
+        "#91abd9",
+        "#d991c9",
+        "#aedb8c"
+    ],
+    // HTTP 和代理设置
+    // "http.proxy": "http://127.0.0.1:7890",
+    // "https.proxy": "http://127.0.0.1:7890",
+    // "http.proxyStrictSSL": false,
+    // 安全和工作区信任设置
+    "security.workspace.trust.untrustedFiles": "open",
+    // 其他设置
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "local-history.enabled": 0,
+    "markdown.copyFiles.destination": {
+        "**/*.md": "${documentBaseName}.assets/${fileName}"
+    },
+    "markdown.editor.drop.copyIntoWorkspace": "never",
+    "powershell.promptToUpdatePowerShell": false,
+    "remote.SSH.defaultExtensions": [
+        "gitpod.gitpod-remote-ssh"
+    ],
+    "remote.SSH.remotePlatform": {
+        "chatgptnext-chatgptnext-16y9nwto6hk.vss.gitpod.io": "linux",
+        "Ubuntu": "linux",
+        "*.gitpod.io": "linux"
+    },
+    "redhat.telemetry.enabled": true,
+    "dev.containers.executeInWSL": true,
+    "errorLens.enabledDiagnosticLevels": [
+        "info",
+        "error"
+    ],
+    "smart-ime.warnDisabled": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "animations.Install-Method": "Apc Customize UI++",
+    "apc.imports": [
+        "file:///c:/Users/y9000p/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js"
+    ],
+    "animations.CursorAnimation": true,
+    "[snippets]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.startupEditor": "none",
+    // Doxygen documentation generator set
+    // 文件注释：版权信息模板
+    // "doxdocgen.file.copyrightTag": [
+    //     "@copyright Copyright (c) {year}  {author}"
+    // ],
+    // 文件注释：自定义模块，这里我添加一个修改日志
+    // "doxdocgen.file.customTag": [
+    //     "@par 修改日志:",
+    //     "<table>",
+    //     "<tr><th>Date       <th>Version <th>Author  <th>Description",
+    //     "<tr><td>{date} <td>1.0     <td>wangh     <td>内容",
+    //     "</table>",
+    // ],
+    "editor.wordWrapColumn": 80,
+    "doxdocgen.c.firstLine": "/********************************************************************",
+    "doxdocgen.c.lastLine": " ********************************************************************/",
+    "doxdocgen.c.triggerSequence": "/**",
+    // 文件注释的组成及其排序
+    "doxdocgen.file.fileOrder": [
+        "file", // @file
+        "brief", // @brief 简介
+        "empty",
+        "author", // 作者
+        "custom",
+        "empty",
+        "date", // 日期
+        "empty"
+    ],
+    // 下面时设置上面标签tag的具体信息
+    "doxdocgen.file.fileTemplate": "@file {indent:10}{name}",
+    "doxdocgen.generic.authorEmail": "lllzzzyyy@buaa.edu.cn",
+    "doxdocgen.generic.authorName": "lzy",
+    "doxdocgen.generic.authorTag": "@author {indent:10}{author} ({email})",
+    "doxdocgen.file.customTag": [
+        "@url      https://lzyyyyyy.fun"
+    ],
+    "doxdocgen.generic.customTags": [
+        "@details  ",
+    ],
+    // 日期格式与模板
+    "doxdocgen.generic.dateFormat": "YYYY-MM-DD",
+    "doxdocgen.generic.dateTemplate": "@date {indent:10}{date}",
+    // 根据自动生成的注释模板（目前主要体现在函数注释上）
+    "doxdocgen.generic.order": [
+        "brief",
+        "custom",
+        "tparam",
+        "param",
+        "return"
+    ],
+    "doxdocgen.generic.briefTemplate": "@brief{indent:10}{text}",
+    "doxdocgen.generic.paramTemplate": "@param{indent:10}{param}{indent:20}",
+    "doxdocgen.generic.returnTemplate": "@return{indent:10}{type}{indent:20}",
+    "doxdocgen.generic.splitCasingSmartText": true,
+    "doxdocgen.generic.includeTypeAtReturn": true,
+    "liveServer.settings.port": 11522,
+    "npm.packageManager": "npm",
+    // clang-format C
+    "clang-format.executable": "C:\\Users\\y9000p\\.vscode\\extensions\\ms-vscode.cpptools-1.19.9-win32-x64\\LLVM\\bin\\clang-format.exe",
+    "clang-format.style": "file",
+    "clang-format.fallbackStyle": "LLVM",
+    "indentRainbow.ignoreErrorLanguages": [
+        "c",
+        "markdown"
+    ],
+    "todo-tree.tree.autoRefresh": true,
+    "todo-tree.highlights.customHighlight": {
+        "WARN": {
+            "foreground": "white",
+            "background": "red",
+            "iconColour": "red",
+            "icon": "alert",
+            "type": "text"
+        },
+        "TODO": {
+            "foreground": "black",
+            "background": "orange",
+            "iconColour": "orange",
+            "icon": "check",
+            "type": "text"
+        },
+        "FIXME": {
+            "foreground": "white",
+            "background": "red",
+            "iconColour": "red",
+            "icon": "bug"
+        },
+        "REVIEW": {
+            "foreground": "black",
+            "background": "cyan",
+            "iconColour": "lightblue",
+            "icon": "eye"
+        },
+        "HACK": {
+            "foreground": "black",
+            "background": "#FFA500",
+            "iconColour": "orange",
+            "icon": "alert"
+        },
+        "REF": {
+            "foreground": "black",
+            "background": "grey",
+            "iconColour": "grey",
+            "icon": "link",
+            "type": "tag"
+        }
+    },
+    "todo-tree.highlights.defaultHighlight": {
+        "type": "text-and-comment"
+    },
+    "todo-tree.general.tags": [
+        "TODO",
+        "FIXME",
+        "REF",
+        "WARNING"
+    ],
+    "leetcode.endpoint": "leetcode-cn",
+    "leetcode.workspaceFolder": "/home/lzy/.leetcode",
+    "leetcode.defaultLanguage": "python3",
+    "markdown.preview.fontFamily": "Glow Sans SC Normal Medium",
+    "leetcode.hint.configWebviewMarkdown": false,
+    "leetcode.hint.commentDescription": false,
+    "leetcode.hint.commandShortcut": false,
+    "EIDE.C51.INI.Path": "c:\\Keil_v5\\UV4\\UV4.exe",
+    "EIDE.OpenOCD.ExePath": "${userRoot}/.eide/tools/openocd_7a1adfbec_mingw32/bin/openocd.exe",
+    "EIDE.ARM.Option.AxfToElf": true,
+    "EIDE.SourceTree.AutoSearchIncludePath": true,
+    "EIDE.Cppcheck.ExecutablePath": "${userRoot}/.eide/tools/cppcheck/cppcheck.exe",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+    },
+    "clangd.path": "c:\\Users\\y9000p\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
+    "C_Cpp.renameRequiresIdentifier": false,
+    "C_Cpp.doxygen.generateOnType": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "github.copilot.terminal.suggestCommand",
+        "matlab.interrupt"
+    ],
+    "fittencode.languagePreference.displayPreference": "zh-cn",
+    "fittencode.languagePreference.commentPreference": "zh-cn",
+    "ai-commit.AI_COMMIT_LANGUAGE": "zh_CN",
+    "ai-commit.OPENAI_API_KEY": "sk-b67U1nNs4j9nPDDjynorsHOlJiAKuzrbUWc4VbhQC7VQ5nTa",
+    "ai-commit.OPENAI_BASE_URL": "https://api.chatanywhere.tech",
+    "gitlens.ai.experimental.provider": "openai",
+    "gitlens.ai.experimental.openai.model": "gpt-3.5-turbo",
+    "gitlens.currentLine.format": "${authorNotYou}${agoOrDate}${' via 'pullRequest}${ • message|50?}",
+    "gitlens.mode.active": "zen",
+    "projectManager.sortList": "Saved",
+    "outline-map.follow": "viewport",
+    "outline-map.customFont": "'FiraCode Nerd Font Mono' ,'Source Han Sans CN V' ",
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.showSpace": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "errorLens.enabled": true,
+    "errorLens.messageEnabled": true,
+    "black-formatter.args": [
+        "--line-length",
+        "80",
+        "--skip-string-normalization"
+    ],
+    "notebook.formatOnSave.enabled": true,
+    "notebook.insertFinalNewline": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "right"
+    },
+    "notebook.cellToolbarVisibility": "hover",
+    "notebook.lineNumbers": "on",
+    "notebook.output.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.experimentalInlineEdit.enabled": true,
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.inlayHints.callArgumentNames": "all",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "commentTranslate.hover.content": false,
+    "security.allowedUNCHosts": [
+        "home",
+        "wsl.localhost"
+    ],
+    "autoDocstring.quoteStyle": "'''",
+    "MATLAB.installPath": "\"E:\\MATLAB 2020a\\bin\\matlab.exe\"",
+    "editor.selectionHighlight": false,
+    "editor.occurrencesHighlight": false,
+    "editor.matchBrackets": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "workbench.sideBar.location": "right",
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "sonarlint.rules": {
+        "javascript:S125": {
+            "level": "off"
+        },
+        "Web:AvoidCommentedOutCodeCheck": {
+            "level": "off"
+        },
+        "Web:S6853": {
+            "level": "off"
+        },
+        "c:S1135": {
+            "level": "off"
+        },
+        "c:S125": {
+            "level": "off"
+        },
+        "c:S995": {
+            "level": "off"
+        },
+        "c:S1172": {
+            "level": "off"
+        },
+        "java:S106": {
+            "level": "off"
+        },
+        "python:S1135": {
+            "level": "off"
+        }
+    },
+    "[latex]": {
+        "editor.defaultFormatter": "iamhyc.overleaf-workshop"
+    },
+    "search.quickOpen.includeSymbols": true,
+    "[sql]": {
+        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    },
+    "[powershell]": {
+        "editor.defaultFormatter": "ms-vscode.powershell"
+    },
+    "php.validate.executablePath": "E:/XAMPP/php/php.exe",
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "redHatDependencyAnalytics.matchManifestVersions": false,
+    "redHatDependencyAnalytics.mvn.executable.path": "E:\\\\apache-maven-3.9.8\\\\bin\\\\mvn",
+}
