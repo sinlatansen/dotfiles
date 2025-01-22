@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # 创建必要的配置目录
-mkdir -p ~/.config/nvim
 mkdir -p ~/.config/neofetch
 mkdir -p ~/.config/tmux-powerline
 if [[ $(hostname) == "MacBookPro" ]]; then
@@ -18,7 +17,6 @@ cd ~/dotfiles
 stow -R zsh
 stow -R tmux
 stow -R clang-format
-stow -R --target=$HOME/.config/nvim nvim
 stow -R --target=$HOME/.config/neofetch neofetch
 stow -R --target=$HOME/.config/tmux-powerline tmux-powerline
 

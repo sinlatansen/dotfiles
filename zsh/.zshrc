@@ -3,9 +3,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
 # 代理
-export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
-export http_proxy="http://$host_ip:7890"
-export https_proxy="http://$host_ip:7890"
+export http_proxy="http://127.0.0.1:7890"
+export https_proxy="http://127.0.0.1:7890"
 
 if [[ $(hostname) == "MacBookPro" ]]; then
   
@@ -48,7 +47,7 @@ elif [[ $(hostname) == "Y9000P" ]]; then
 
 fi
 
-ZSH_THEME="eastwood"
+ZSH_THEME="ys"
 
 # Oh My Zsh
 if [[ $(hostname) == "MacBookPro" ]]; then
@@ -87,13 +86,12 @@ alias .5='cd ../../../../..'
 # 用trash代替rm
 alias rm="trash"
 
-alias zshrc='nvim ~/.zshrc'
+alias zshrc='vim ~/.zshrc'
 alias update="source ~/.zshrc"
 alias cls="clear"
-alias vim="nvim"
-alias n="nvim"
-alias n.="nvim ."
-alias nc="n ~/.config/nvim/"
+# alias n="nvim"
+# alias n.="nvim ."
+# alias nc="n ~/.config/nvim/"
 alias h='history'
 
 alias df='duf'
@@ -119,11 +117,11 @@ alias offclash='unset http_proxy && unset https_proxy all_proxy'
 alias onclash='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
 
 # lsd
-alias bls="/bin/ls"
-alias ls="lsd"
-alias lsa="lsd -a"
-alias lt="lsd --tree"
-alias lta="lsd -a --tree"
+# alias bls="/bin/ls"
+# alias ls="lsd"
+# alias lsa="lsd -a"
+# alias lt="lsd --tree"
+# alias lta="lsd -a --tree"
 
 # lazygit
 alias lg="lazygit"
@@ -131,9 +129,9 @@ alias lg="lazygit"
 alias dt="cd ~/dotfiles && lsa"
 
 # lsd
-alias bll="/bin/ls -al"
-alias ll='lsd -l'
-alias lla='lsd -al'
+# alias bll="/bin/ls -al"
+# alias ll='lsd -l'
+# alias lla='lsd -al'
 
 # github copliot
 alias ghcs="gh copilot suggest"
@@ -190,7 +188,7 @@ fi
 # 避免粘贴格式损坏
 DISABLE_MAGIC_FUNCTIONS="true"
 
-eval $(thefuck --alias f)
+# eval $(thefuck --alias f)
 
 # yazi
 function yy() {
@@ -214,8 +212,20 @@ elif [[ $(hostname) == "Cloud" ]]; then
   echo
   figlet -c Hello Ubuntu!
   fortune
+  
+elif [[ $(hostname) == "jdCloud" ]]; then
+  
+  clear
+  echo
+  echo "求知无坦途。"
 
 elif [[ $(hostname) == "Y9000P" ]]; then
   fortune | pokemonsay
 fi
+
+PATH="$PATH:./node_modules/.bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
