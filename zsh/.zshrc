@@ -3,8 +3,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
 # 代理
-export http_proxy="http://127.0.0.1:7890"
-export https_proxy="http://127.0.0.1:7890"
+# export http_proxy="http://127.0.0.1:7890"
+# export https_proxy="http://127.0.0.1:7890"
 
 if [[ $(hostname) == "MacBookPro" ]]; then
   
@@ -16,19 +16,6 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 
   export https_proxy=http://127.0.0.1:33210 http_proxy=http://127.0.0.1:33210 all_proxy=socks5://127.0.0.1:33211
   
-elif [[ $(hostname) == "Cloud" ]]; then
-  
-  # 给root传递
-  export EDITOR="/usr/bin/nvim"
-  
-  # X11
-  export DISPLAY=localhost:10.0
-
-  # nvm
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 elif [[ $(hostname) == "Y9000P" ]]; then
   # 代理
   export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
@@ -47,6 +34,11 @@ elif [[ $(hostname) == "Y9000P" ]]; then
 
 fi
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 ZSH_THEME="ys"
 
 # Oh My Zsh
@@ -55,7 +47,7 @@ if [[ $(hostname) == "MacBookPro" ]]; then
   ZSH_THEME="re5et"
   # eval "$(lua $HOME/.oh-my-zsh/custom/plugins/zlua/z.lua --init zsh)"
 
-elif [[ $(hostname) == "Cloud" ]]; then
+elif [[ $(hostname) == "jdCloud" ]]; then
 
   ZSH_THEME="ys"
   
@@ -65,7 +57,7 @@ elif [[ $(hostname) == "Y9000P" ]]; then
   
 fi
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting copyfile copypath sudo)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting copyfile copypath sudo z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,19 +76,15 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # 用trash代替rm
-alias rm="trash"
+# alias rm="trash"
 
-alias zshrc='vim ~/.zshrc'
+alias zshrc='hx ~/.zshrc'
 alias update="source ~/.zshrc"
 alias cls="clear"
-# alias n="nvim"
-# alias n.="nvim ."
-# alias nc="n ~/.config/nvim/"
 alias h='history'
 
 alias df='duf'
 alias md="mkdir "
-
 
 # 连接上次会话
 alias ta="tmux a"
@@ -117,11 +105,11 @@ alias offclash='unset http_proxy && unset https_proxy all_proxy'
 alias onclash='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
 
 # lsd
-# alias bls="/bin/ls"
-# alias ls="lsd"
-# alias lsa="lsd -a"
-# alias lt="lsd --tree"
-# alias lta="lsd -a --tree"
+alias bls="/bin/ls"
+alias ls="lsd"
+alias lsa="lsd -a"
+alias lt="lsd --tree"
+alias lta="lsd -a --tree"
 
 # lazygit
 alias lg="lazygit"
@@ -129,9 +117,9 @@ alias lg="lazygit"
 alias dt="cd ~/dotfiles && lsa"
 
 # lsd
-# alias bll="/bin/ls -al"
-# alias ll='lsd -l'
-# alias lla='lsd -al'
+alias bll="/bin/ls -al"
+alias ll='lsd -l'
+alias lla='lsd -al'
 
 # github copliot
 alias ghcs="gh copilot suggest"
@@ -176,12 +164,6 @@ if [[ $(hostname) == "MacBookPro" ]]; then
   alias g++="g++-14"
   alias c++="c++-14"
 
-elif [[ $(hostname) == "Cloud" ]]; then
-
-  # typecho
-  alias tgp="cd /www/typecho/usr/themes/butterfly/ && git pull"
-  alias pgp="cd /www/typecho/usr/plugins/ && git pull"
-
 fi
 
 
@@ -206,13 +188,6 @@ if [[ $(hostname) == "MacBookPro" ]]; then
   # figlet -c -f larry3d Welcome!
   # fortune
 
-elif [[ $(hostname) == "Cloud" ]]; then
-
-  echo
-  echo
-  figlet -c Hello Ubuntu!
-  fortune
-  
 elif [[ $(hostname) == "jdCloud" ]]; then
   
   clear
@@ -225,7 +200,5 @@ fi
 
 PATH="$PATH:./node_modules/.bin"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup

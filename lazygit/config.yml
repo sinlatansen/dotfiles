@@ -1,0 +1,24 @@
+gui:
+  language: zh-CN  # 语言设置为中文
+  showIcons: true  # 显示图标
+  showFileTree: true  # 在界面显示文件树
+  nerdFontsVersion: "3"  # Nerd Font 3 版本支持
+  sidePanelWidth: 0.3  # 侧边栏宽度 (默认 30%)
+  mouseEvents: true  # 允许鼠标操作
+  theme:
+    lightTheme: false  # 使用暗色主题
+    activeBorderColor: [green, bold]  # 选中的边框颜色
+    inactiveBorderColor: [white]  # 未选中的边框颜色
+    selectedLineBgColor: [black]  # 选中行的背景颜色
+
+git:
+  autoFetch: true  # 自动拉取远程更新
+
+os:
+  editPreset: "nvim"  # 默认编辑器（可改为 vim, nano, code 等）
+
+refresher:
+  refreshInterval: 10  # 每 10 秒自动刷新
+
+confirmOnQuit: false  # 退出时不提示确认
+

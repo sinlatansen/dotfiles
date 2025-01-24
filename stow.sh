@@ -3,6 +3,8 @@
 # 创建必要的配置目录
 mkdir -p ~/.config/neofetch
 mkdir -p ~/.config/tmux-powerline
+mkdir -p ~/.config/helix
+mkdir -p ~/.config/lazygit
 if [[ $(hostname) == "MacBookPro" ]]; then
 	mkdir -p ~/.config/yabai
 	mkdir -p ~/.config/skhd
@@ -19,6 +21,8 @@ stow -R tmux
 stow -R clang-format
 stow -R --target=$HOME/.config/neofetch neofetch
 stow -R --target=$HOME/.config/tmux-powerline tmux-powerline
+stow -R --target=$HOME/.config/helix helix
+stow -R --target=$HOME/.config/lazygit lazygit
 
 if [[ $(hostname) == "MacBookPro" ]]; then
 	stow -R --target=$HOME/.config/yabai yabai

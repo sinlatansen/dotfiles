@@ -6,7 +6,7 @@
 
   1. zsh
   2. tmux
-  3. nvim
+  3. helix
   4. neofetch
   5. yabai
   6. skhd

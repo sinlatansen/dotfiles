@@ -1,0 +1,32 @@
+theme = "dracula"
+
+[editor]
+line-number = "relative"
+cursorline = true
+cursorcolumn = true
+bufferline = "always"
+auto-format = true
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-type"]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.file-picker]
+hidden = false
+
+[editor.search]
+wrap-around = true
+
+[keys.insert]
+j = { j = "normal_mode" }
