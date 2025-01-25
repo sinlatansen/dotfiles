@@ -173,10 +173,10 @@ DISABLE_MAGIC_FUNCTIONS="true"
 # eval $(thefuck --alias f)
 
 # yazi
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"

@@ -12,6 +12,10 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 	echo "Something of MacBookPro done."
 fi
 
+if [[ $(hostname) == "jdCloud" ]]; then
+	mkdir -p ~/.config/yabai
+fi
+
 # 切换到 dotfiles 目录
 cd ~/dotfiles
 
@@ -29,5 +33,10 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 	stow -R --target=$HOME/.config/skhd skhd
 	echo "Something of MacBookPro done."
 fi
+
+if [[ $(hostname) == "jdCloud" ]]; then
+	stow -R --target=$HOME/.config/yabai yabai
+fi
+
 
 echo "Configurations have been stowed."
