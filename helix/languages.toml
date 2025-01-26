@@ -5,7 +5,6 @@ scope = "source.sh"
 file-types = ["sh"]
 shebangs = ["sh", "bash"]
 roots = [".git"]
-comment-tokens = ["#"]
 indent = { tab-width = 4, unit = "    " }
 language-servers = ["bash-language-server"]
 auto-format = true
