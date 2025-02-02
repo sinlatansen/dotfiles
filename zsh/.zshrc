@@ -16,6 +16,15 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 
   export https_proxy=http://127.0.0.1:33210 http_proxy=http://127.0.0.1:33210 all_proxy=socks5://127.0.0.1:33211
   
+elif [[ $(hostname) == "MacMini" ]]; then
+
+  export LANG=zh_CN.UTF-8
+  export LC_ALL=zh_CN.UTF-8
+
+  export http_proxy=http://127.0.0.1:7890
+  export https_proxy=http://127.0.0.1:7890
+  export ALL_PROXY=socks5://127.0.0.1:7890
+
 elif [[ $(hostname) == "Y9000P" ]]; then
   # 代理
   export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
@@ -110,6 +119,9 @@ alias ls="lsd"
 alias lsa="lsd -a"
 alias lt="lsd --tree"
 alias lta="lsd -a --tree"
+
+# frp
+alias reload_frp="sudo launchctl stop com.frp.client; sudo launchctl start com.frp.client"
 
 # lazygit
 alias lg="lazygit"
