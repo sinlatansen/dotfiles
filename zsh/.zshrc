@@ -20,6 +20,15 @@ elif [[ $(hostname) == "jdCloud" ]]; then
 
   export http_proxy="http://127.0.0.1:7890"
   export https_proxy="http://127.0.0.1:7890"
+  
+elif [[ $(hostname) == "MacMini" ]]; then
+
+  export LANG=zh_CN.UTF-8
+  export LC_ALL=zh_CN.UTF-8
+
+  export http_proxy=http://127.0.0.1:7890
+  export https_proxy=http://127.0.0.1:7890
+  export ALL_PROXY=socks5://127.0.0.1:7890
 
 elif [[ $(hostname) == "Y9000P" ]]; then
   # 代理
@@ -115,6 +124,9 @@ alias ls="lsd"
 alias lsa="lsd -a"
 alias lt="lsd --tree"
 alias lta="lsd -a --tree"
+
+# frp
+alias reload_frp="sudo launchctl stop com.frp.client; sudo launchctl start com.frp.client"
 
 # lazygit
 alias lg="lazygit"
