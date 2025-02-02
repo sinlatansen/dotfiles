@@ -1,4 +1,4 @@
-# 配置 Bash 语言支持
+# bash
 [[language]]
 name = "bash"
 scope = "source.sh"
@@ -9,7 +9,19 @@ indent = { tab-width = 4, unit = "    " }
 language-servers = ["bash-language-server"]
 auto-format = true
 
-# 配置 Bash 语言服务器
 [language-server.bash-language-server]
 command = "bash-language-server"
 args = ["start"]
+
+# js
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server"]
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server"]
+
+[language.formatter]
+command = "prettier"
+args = ["--stdin-filepath", "%s"]

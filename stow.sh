@@ -13,7 +13,7 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 fi
 
 if [[ $(hostname) == "jdCloud" ]]; then
-	mkdir -p ~/.config/yabai
+	mkdir -p ~/.config/yazi
 fi
 
 # 切换到 dotfiles 目录
@@ -35,7 +35,7 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 fi
 
 if [[ $(hostname) == "jdCloud" ]]; then
-	stow -R --target=$HOME/.config/yabai yabai
+	stow -R --target=$HOME/.config/yazi yazi
 fi
 
 

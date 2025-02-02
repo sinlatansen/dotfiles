@@ -16,6 +16,11 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 
   export https_proxy=http://127.0.0.1:33210 http_proxy=http://127.0.0.1:33210 all_proxy=socks5://127.0.0.1:33211
   
+elif [[ $(hostname) == "jdCloud" ]]; then
+
+  export http_proxy="http://127.0.0.1:7890"
+  export https_proxy="http://127.0.0.1:7890"
+
 elif [[ $(hostname) == "Y9000P" ]]; then
   # 代理
   export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
