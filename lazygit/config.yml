@@ -15,7 +15,7 @@ git:
   autoFetch: true  # 自动拉取远程更新
 
 os:
-  editPreset: "hx"  # 默认编辑器（可改为 vim, nano, code 等）
+  editPreset: "helix"  # 默认编辑器（可改为 vim, nano, code 等）
 
 refresher:
   refreshInterval: 10  # 每 10 秒自动刷新
