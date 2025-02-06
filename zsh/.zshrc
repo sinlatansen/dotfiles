@@ -30,6 +30,10 @@ elif [[ $(hostname) == "MacMini" ]]; then
   export https_proxy=http://127.0.0.1:7890
   export ALL_PROXY=socks5://127.0.0.1:7890
 
+elif [[ $(hostname) == "zongbao-BUAA" ]]; then
+
+  alias fd="fdfind"
+
 elif [[ $(hostname) == "Y9000P" ]]; then
   # 代理
   export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
@@ -210,6 +214,12 @@ elif [[ $(hostname) == "jdCloud" ]]; then
   clear
   echo
   echo "求知无坦途。"
+
+elif [[ $(hostname) == "zongbao-BUAA" ]]; then
+
+  clear
+  echo
+  echo "欢迎来到宗宝学长网站服务器。"
 
 elif [[ $(hostname) == "Y9000P" ]]; then
   fortune | pokemonsay
