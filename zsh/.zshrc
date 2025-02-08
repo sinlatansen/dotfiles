@@ -20,6 +20,9 @@ elif [[ $(hostname) == "jdCloud" ]]; then
 
   export http_proxy="http://127.0.0.1:7890"
   export https_proxy="http://127.0.0.1:7890"
+
+  export CF_Key="kdDY-FTgAFNU8KOwburpcTE3n1KzGHc6cXM_q0zY"
+  export CF_Email="lllzzzyyy32@gmail.com"
   
 elif [[ $(hostname) == "MacMini" ]]; then
 
@@ -219,3 +222,4 @@ PATH="$PATH:./node_modules/.bin"
 
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+. "/home/lzy/.acme.sh/acme.sh.env"
