@@ -77,7 +77,7 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 
 elif [[ $(hostname) == "jdCloud" ]]; then
 
-  ZSH_THEME="ys"
+  ZSH_THEME="powerlevel10k/powerlevel10k"
 
 elif [[ $(hostname) == "MacMini" ]]; then
 
