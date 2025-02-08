@@ -27,6 +27,9 @@ elif [[ $(hostname) == "jdCloud" ]]; then
 
   export http_proxy="http://127.0.0.1:7890"
   export https_proxy="http://127.0.0.1:7890"
+
+  export CF_Key="kdDY-FTgAFNU8KOwburpcTE3n1KzGHc6cXM_q0zY"
+  export CF_Email="lllzzzyyy32@gmail.com"
   
 elif [[ $(hostname) == "MacMini" ]]; then
 
@@ -36,6 +39,10 @@ elif [[ $(hostname) == "MacMini" ]]; then
   export http_proxy=http://127.0.0.1:7890
   export https_proxy=http://127.0.0.1:7890
   export ALL_PROXY=socks5://127.0.0.1:7890
+
+elif [[ $(hostname) == "zongbao-BUAA" ]]; then
+
+  alias fd="fdfind"
 
 elif [[ $(hostname) == "Y9000P" ]]; then
   # 代理
@@ -222,6 +229,12 @@ elif [[ $(hostname) == "jdCloud" ]]; then
   echo
   echo "求知无坦途。"
 
+elif [[ $(hostname) == "zongbao-BUAA" ]]; then
+
+  clear
+  echo
+  echo "欢迎来到宗宝学长网站服务器。"
+
 elif [[ $(hostname) == "Y9000P" ]]; then
   fortune | pokemonsay
 fi
@@ -230,6 +243,9 @@ PATH="$PATH:./node_modules/.bin"
 
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+
+# acme.sh ssl证书
+. "/home/lzy/.acme.sh/acme.sh.env"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
