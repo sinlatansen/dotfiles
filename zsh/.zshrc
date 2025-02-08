@@ -30,6 +30,9 @@ elif [[ $(hostname) == "jdCloud" ]]; then
 
   export CF_Key="kdDY-FTgAFNU8KOwburpcTE3n1KzGHc6cXM_q0zY"
   export CF_Email="lllzzzyyy32@gmail.com"
+
+  # acme.sh ssl证书
+  . "/home/lzy/.acme.sh/acme.sh.env"
   
 elif [[ $(hostname) == "MacMini" ]]; then
 
@@ -243,9 +246,6 @@ PATH="$PATH:./node_modules/.bin"
 
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-
-# acme.sh ssl证书
-. "/home/lzy/.acme.sh/acme.sh.env"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
