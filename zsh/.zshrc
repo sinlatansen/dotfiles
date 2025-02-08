@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # 环境变量
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
@@ -33,6 +40,10 @@ elif [[ $(hostname) == "MacMini" ]]; then
   export https_proxy=http://127.0.0.1:7890
   export ALL_PROXY=socks5://127.0.0.1:7890
 
+elif [[ $(hostname) == "zongbao-BUAA" ]]; then
+
+  alias fd="fdfind"
+
 elif [[ $(hostname) == "Y9000P" ]]; then
   # 代理
   export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
@@ -67,7 +78,11 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 elif [[ $(hostname) == "jdCloud" ]]; then
 
   ZSH_THEME="ys"
-  
+
+elif [[ $(hostname) == "MacMini" ]]; then
+
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+    
 elif [[ $(hostname) == "Y9000P" ]]; then
 
   ZSH_THEME="eastwood"
@@ -214,6 +229,12 @@ elif [[ $(hostname) == "jdCloud" ]]; then
   echo
   echo "求知无坦途。"
 
+elif [[ $(hostname) == "zongbao-BUAA" ]]; then
+
+  clear
+  echo
+  echo "欢迎来到宗宝学长网站服务器。"
+
 elif [[ $(hostname) == "Y9000P" ]]; then
   fortune | pokemonsay
 fi
@@ -222,4 +243,9 @@ PATH="$PATH:./node_modules/.bin"
 
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+
+# acme.sh ssl证书
 . "/home/lzy/.acme.sh/acme.sh.env"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
