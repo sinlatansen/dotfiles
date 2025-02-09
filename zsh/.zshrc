@@ -43,6 +43,8 @@ elif [[ $(hostname) == "MacMini" ]]; then
   export https_proxy=http://127.0.0.1:7890
   export ALL_PROXY=socks5://127.0.0.1:7890
 
+  export PATH="$HOME/.local/bin:$PATH"
+
 elif [[ $(hostname) == "zongbao-BUAA" ]]; then
 
   alias fd="fdfind"
