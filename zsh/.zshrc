@@ -33,6 +33,8 @@ elif [[ $(hostname) == "jdCloud" ]]; then
 
   # acme.sh ssl证书
   . "/home/lzy/.acme.sh/acme.sh.env"
+
+  alias cat="batcat"
   
 elif [[ $(hostname) == "MacMini" ]]; then
 
@@ -121,7 +123,7 @@ alias cls="clear"
 alias h='history'
 
 alias df='duf'
-alias md="mkdir "
+alias md="mkdir"
 
 # 连接上次会话
 alias ta="tmux a"
