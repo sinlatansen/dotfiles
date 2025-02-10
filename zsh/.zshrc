@@ -47,6 +47,9 @@ elif [[ $(hostname) == "MacMini" ]]; then
 
   export PATH="$HOME/.local/bin:$PATH"
 
+  export OLLAMA_HOST=0.0.0.0
+  export OLLAMA_ORIGINS=*
+
 elif [[ $(hostname) == "zongbao-BUAA" ]]; then
 
   alias fd="fdfind"
