@@ -13,8 +13,12 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 # export http_proxy="http://127.0.0.1:7890"
 # export https_proxy="http://127.0.0.1:7890"
 
+ZSH_THEME="ys"
+
 if [[ $(hostname) == "MacBookPro" ]]; then
-  
+
+  ZSH_THEME="re5et"
+    
   export TERM="xterm-256color"
   export RANGER_LOAD_DEFAULT_RC=false
   
@@ -22,8 +26,29 @@ if [[ $(hostname) == "MacBookPro" ]]; then
   # export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 
   export https_proxy=http://127.0.0.1:33210 http_proxy=http://127.0.0.1:33210 all_proxy=socks5://127.0.0.1:33211
-  
+
+  # 快捷开启XQuartz
+  alias xserver="defaults write org.xquartz.X11 app_to_run /usr/bin/true && open -a XQuartz"
+
+  alias ut="ssh -X ubuntu@82.156.196.198"
+
+  # lsd 长日期
+  alias ll='lsd -l --date +%Y年%m月%d"日"%H:%M:%S'
+  alias lla='lsd -al --date +%Y年%m月%d"日"%H:%M:%S'
+
+  # taskbar
+  alias start="brew services start sketchybar"
+  alias stop="brew services stop sketchybar"
+
+  # gcc
+  alias gcc="gcc-14"
+  alias cc="gcc-14"
+  alias g++="g++-14"
+  alias c++="c++-14"
+
 elif [[ $(hostname) == "jdCloud" ]]; then
+
+  ZSH_THEME="powerlevel10k/powerlevel10k"
 
   export http_proxy="http://127.0.0.1:7890"
   export https_proxy="http://127.0.0.1:7890"
@@ -38,6 +63,8 @@ elif [[ $(hostname) == "jdCloud" ]]; then
   
 elif [[ $(hostname) == "MacMini" ]]; then
 
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+
   export LANG=zh_CN.UTF-8
   export LC_ALL=zh_CN.UTF-8
 
@@ -50,11 +77,17 @@ elif [[ $(hostname) == "MacMini" ]]; then
   export OLLAMA_HOST=0.0.0.0
   export OLLAMA_ORIGINS=*
 
+  # 用trash代替rm
+  alias rm="trash"
+
 elif [[ $(hostname) == "zongbao-BUAA" ]]; then
 
   alias fd="fdfind"
 
 elif [[ $(hostname) == "Y9000P" ]]; then
+
+  ZSH_THEME="eastwood"
+
   # 代理
   export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
   export http_proxy="http://$host_ip:7890"
@@ -77,27 +110,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-ZSH_THEME="ys"
-
-# Oh My Zsh
-if [[ $(hostname) == "MacBookPro" ]]; then
-  
-  ZSH_THEME="re5et"
-  # eval "$(lua $HOME/.oh-my-zsh/custom/plugins/zlua/z.lua --init zsh)"
-
-elif [[ $(hostname) == "jdCloud" ]]; then
-
-  ZSH_THEME="powerlevel10k/powerlevel10k"
-
-elif [[ $(hostname) == "MacMini" ]]; then
-
-  ZSH_THEME="powerlevel10k/powerlevel10k"
-    
-elif [[ $(hostname) == "Y9000P" ]]; then
-
-  ZSH_THEME="eastwood"
-  
-fi
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting copyfile copypath sudo z)
 
@@ -116,9 +128,6 @@ alias .2='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
-
-# 用trash代替rm
-# alias rm="trash"
 
 alias zshrc='hx ~/.zshrc'
 alias update="source ~/.zshrc"
@@ -174,44 +183,6 @@ alias ghce="gh copilot explain"
 alias gm="cp ~/dotfiles/makefile/makefile ."
 alias gM="cp ~/dotfiles/makefile/makefile Makefile"
 
-# 删除指定目录下可执行文件
-findx() {
-  find "${1:-.}" -type f -executable -print
-}
-cleanx() {
-  find "${1:-.}" -type f -executable -print0 | xargs -0 trash
-}
-
-# 格式化指定目录下所有.c,.h代码
-fmt() {
-  find "${1:-.}" -iname '*.h' -o -iname '*.c' | xargs clang-format -i
-}
-
-
-if [[ $(hostname) == "MacBookPro" ]]; then
-
-  # 快捷开启XQuartz
-  alias xserver="defaults write org.xquartz.X11 app_to_run /usr/bin/true && open -a XQuartz"
-
-  alias ut="ssh -X ubuntu@82.156.196.198"
-
-  # lsd 长日期
-  alias ll='lsd -l --date +%Y年%m月%d"日"%H:%M:%S'
-  alias lla='lsd -al --date +%Y年%m月%d"日"%H:%M:%S'
-
-  # taskbar
-  alias start="brew services start sketchybar"
-  alias stop="brew services stop sketchybar"
-
-  # gcc
-  alias gcc="gcc-14"
-  alias cc="gcc-14"
-  alias g++="g++-14"
-  alias c++="c++-14"
-
-fi
-
-
 # 避免粘贴格式损坏
 DISABLE_MAGIC_FUNCTIONS="true"
 
@@ -228,12 +199,7 @@ function y() {
 }
 
 # Welcome message
-if [[ $(hostname) == "MacBookPro" ]]; then
-
-  # figlet -c -f larry3d Welcome!
-  # fortune
-
-elif [[ $(hostname) == "jdCloud" ]]; then
+if [[ $(hostname) == "jdCloud" ]]; then
   
   clear
   echo
