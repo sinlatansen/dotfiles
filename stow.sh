@@ -21,6 +21,7 @@ stow -R zsh
 stow -R tmux
 stow -R clang-format
 stow -R powerlevel-10k
+stow -R wezterm
 stow -R --target=$HOME/.config/neofetch neofetch
 stow -R --target=$HOME/.config/tmux-powerline tmux-powerline
 stow -R --target=$HOME/.config/helix helix
@@ -32,5 +33,6 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 	stow -R --target=$HOME/.config/skhd skhd
 	echo "Something of MacBookPro done."
 fi
+
 
 echo "Configurations have been stowed."

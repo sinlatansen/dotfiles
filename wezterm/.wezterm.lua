@@ -9,10 +9,9 @@ if wezterm.config_builder then
 end
 
 -- 基本设置
-config.default_prog = { "pwsh.exe", "-NoLogo" } -- 默认启动 PowerShell
 config.color_scheme = "Tokyo Night" -- 配色方案设为 Tokyo Night
 config.font = wezterm.font_with_fallback({
-	{ family = "Hack Nerd Font", scale = 1.2 }, -- 字体设为 Hack Nerd Font，并放大 1.2 倍
+	{ family = "Sarasa Term SC Nerd", scale = 1.2 }, -- 字体设为 Hack Nerd Font，并放大 1.2 倍
 })
 config.window_background_opacity = 0.9 -- 窗口背景透明度设为 0.9
 config.window_decorations = "RESIZE" -- 窗口装饰允许调整大小

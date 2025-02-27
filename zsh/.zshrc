@@ -10,8 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
 # 代理
-# export http_proxy="http://127.0.0.1:7890"
-# export https_proxy="http://127.0.0.1:7890"
+export http_proxy="http://127.0.0.1:7890"
+export https_proxy="http://127.0.0.1:7890"
 
 ZSH_THEME="ys"
 
@@ -84,24 +84,12 @@ elif [[ $(hostname) == "zongbao-BUAA" ]]; then
 
   alias fd="fdfind"
 
-elif [[ $(hostname) == "Y9000P" ]]; then
+elif [[ $(hostname) == "y9000p" ]]; then
 
-  ZSH_THEME="eastwood"
+  export PATH=$PATH:$HOME/.dotnet
+  export DOTNET_ROOT=$HOME/.dotnet
 
-  # 代理
-  export host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
-  export http_proxy="http://$host_ip:7890"
-  export https_proxy="http://$host_ip:7890"
-
-  # X11
-  export DISPLAY=$host_ip:0
-  
-  # neovim
-  export PATH="/opt/nvim/bin:$PATH"
-
-  # zoxide
-  export PATH="$PATH:/home/lzy/.local/bin"
-  eval "$(zoxide init zsh)"
+  ZSH_THEME="powerlevel10k/powerlevel10k"
 
 fi
 
@@ -211,8 +199,6 @@ elif [[ $(hostname) == "zongbao-BUAA" ]]; then
   echo
   echo "欢迎来到宗宝学长网站服务器。"
 
-elif [[ $(hostname) == "Y9000P" ]]; then
-  fortune | pokemonsay
 fi
 
 PATH="$PATH:./node_modules/.bin"
