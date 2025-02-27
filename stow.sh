@@ -1,5 +1,26 @@
 #!/bin/bash
 
+# 删除旧的链接
+stow -D zsh
+stow -D tmux
+stow -D clang-format
+stow -D powerlevel-10k
+stow -D wezterm
+stow -D neofetch
+stow -D tmux-powerline
+stow -D helix
+stow -D lazygit
+stow -D yazi
+
+if [[ $(hostname) == "MacBookPro" ]]; then
+  stow -D yabai
+  stow -D skhd
+fi
+
+if [[ $(hostname) == "y9000p" ]]; then
+  stow -D polybar
+fi
+
 # 创建必要的配置目录
 mkdir -p ~/.config/neofetch
 mkdir -p ~/.config/tmux-powerline
@@ -7,10 +28,12 @@ mkdir -p ~/.config/helix
 mkdir -p ~/.config/lazygit
 mkdir -p ~/.config/yazi
 if [[ $(hostname) == "MacBookPro" ]]; then
-	mkdir -p ~/.config/yabai
-	mkdir -p ~/.config/skhd
-	mkdir -p ~/.config/sketchybar
-	echo "Something of MacBookPro done."
+  mkdir -p ~/.config/yabai
+  mkdir -p ~/.config/skhd
+  mkdir -p ~/.config/sketchybar
+fi
+if [[ $(hostname) == "y9000p" ]]; then
+  mkdir -p ~/.config/polybar
 fi
 
 # 切换到 dotfiles 目录
@@ -29,10 +52,13 @@ stow -R --target=$HOME/.config/lazygit lazygit
 stow -R --target=$HOME/.config/yazi yazi
 
 if [[ $(hostname) == "MacBookPro" ]]; then
-	stow -R --target=$HOME/.config/yabai yabai
-	stow -R --target=$HOME/.config/skhd skhd
-	echo "Something of MacBookPro done."
+  stow -R --target=$HOME/.config/yabai yabai
+  stow -R --target=$HOME/.config/skhd skhd
+  echo "Something of MacBookPro done."
 fi
 
-
+if [[ $(hostname) == "y9000p" ]]; then
+  stow -R --target=$HOME/.config/polybar polybar
+  echo "Something of y9000p done."
+fi
 echo "Configurations have been stowed."
