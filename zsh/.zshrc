@@ -212,6 +212,7 @@ elif [[ $(hostname) == "y9000p" ]]; then
   clear
   echo
   echo "求知无坦途。"
+  echo
 
 fi
 

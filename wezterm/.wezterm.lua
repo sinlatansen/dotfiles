@@ -11,9 +11,10 @@ end
 -- 基本设置
 -- config.color_scheme = "catppuccin-macchiato"
 config.color_scheme = "nord"
-config.font = wezterm.font_with_fallback({
-	{ family = "Sarasa Term SC Nerd", scale = 1.4 },
-})
+config.font = wezterm.font_with_fallback {
+	{ family = "Ubuntu Mono Nerd Font", weight = 'Light', scale = 1.4 },
+	{ family = "Sarasa Term SC Nerd",   scale = 1.4 },
+}
 config.window_background_opacity = 0.9            -- 窗口背景透明度设为 0.9
 config.window_decorations = "RESIZE"              -- 窗口装饰允许调整大小
 config.window_close_confirmation = "AlwaysPrompt" -- 关闭窗口时始终提示确认
@@ -47,11 +48,10 @@ config.keys = {
 	{ key = "r", mods = "LEADER",       action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) }, -- Leader 键 + r 激活窗格调整模式
 
 	-- 标签页键绑定
-	{ key = "n", mods = "LEADER",       action = act.SpawnTab("CurrentPaneDomain") },                          -- Leader 键 + n 新建标签页
-	{ key = "[", mods = "LEADER",       action = act.ActivateTabRelative(-1) },                                -- Leader 键 + [ 切换到前一个标签页
-	{ key = "]", mods = "LEADER",       action = act.ActivateTabRelative(1) },                                 -- Leader 键 + ] 切换到下一个标签页
-	{ key = "t", mods = "LEADER",       action = act.ShowTabNavigator },                                       -- Leader 键 + t 显示标签页导航器
-	{ key = "m", mods = "LEADER",       action = act.ActivateKeyTable({ name = "move_tab", one_shot = false }) }, -- Leader 键 + m 激活标签页移动模式
+	{ key = "c", mods = "LEADER",       action = act.SpawnTab("CurrentPaneDomain") }, -- Leader 键 + n 新建标签页
+	{ key = "p", mods = "LEADER",       action = act.ActivateTabRelative(-1) },    -- Leader 键 + [ 切换到前一个标签页
+	{ key = "n", mods = "LEADER",       action = act.ActivateTabRelative(1) },     -- Leader 键 + ] 切换到下一个标签页
+	{ key = "t", mods = "LEADER",       action = act.ShowTabNavigator },           -- Leader 键 + t 显示标签页导航器
 
 	-- 最后，工作空间
 	{ key = "w", mods = "LEADER",       action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) }, -- Leader 键 + w 显示工作空间启动器
