@@ -96,6 +96,9 @@ elif [[ $(hostname) == "y9000p" ]]; then
   alias ca="unblock-airpods.sh"
   alias da="block-airpods.sh"
 
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_ed25519'
+
 fi
 
 # nvm
