@@ -7,10 +7,10 @@ stow -D clang-format
 stow -D powerlevel-10k
 stow -D wezterm
 stow -D neofetch
-stow -D tmux-powerline
 stow -D helix
 stow -D lazygit
 stow -D yazi
+stow -D ideavim
 
 if [[ $(hostname) == "MacBookPro" ]]; then
   stow -D yabai
@@ -23,7 +23,6 @@ fi
 
 # 创建必要的配置目录
 mkdir -p ~/.config/neofetch
-mkdir -p ~/.config/tmux-powerline
 mkdir -p ~/.config/helix
 mkdir -p ~/.config/lazygit
 mkdir -p ~/.config/yazi
@@ -45,8 +44,8 @@ stow -R tmux
 stow -R clang-format
 stow -R powerlevel-10k
 stow -R wezterm
+stow -R ideavim
 stow -R --target=$HOME/.config/neofetch neofetch
-stow -R --target=$HOME/.config/tmux-powerline tmux-powerline
 stow -R --target=$HOME/.config/helix helix
 stow -R --target=$HOME/.config/lazygit lazygit
 stow -R --target=$HOME/.config/yazi yazi

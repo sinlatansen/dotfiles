@@ -88,8 +88,13 @@ elif [[ $(hostname) == "y9000p" ]]; then
 
   export PATH=$PATH:$HOME/.dotnet
   export DOTNET_ROOT=$HOME/.dotnet
+  export PATH=$PATH:$HOME/workspace/scripts
 
   ZSH_THEME="powerlevel10k/powerlevel10k"
+
+  alias cubemx="flatpak run com.st.STM32CubeMX"
+  alias ca="unblock-airpods.sh"
+  alias da="block-airpods.sh"
 
 fi
 
@@ -198,6 +203,12 @@ elif [[ $(hostname) == "zongbao-BUAA" ]]; then
   clear
   echo
   echo "欢迎来到宗宝学长网站服务器。"
+
+elif [[ $(hostname) == "y9000p" ]]; then
+
+  clear
+  echo
+  echo "求知无坦途。"
 
 fi
 

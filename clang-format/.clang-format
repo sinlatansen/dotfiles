@@ -5,6 +5,7 @@
 Language: Cpp
 
 BasedOnStyle: GOOGLE
+
 # # 访问说明符(public、private等)的偏移
 # AccessModifierOffset: -4
 
@@ -148,7 +149,8 @@ BasedOnStyle: GOOGLE
 # BreakConstructorInitializers: BeforeComma
 
 # 每行字符的限制，0表示没有限制
-ColumnLimit: 80
+ColumnLimit: 120
+
 # # 描述具有特殊意义的注释的正则表达式，它不应该被分割为多行或以其它方式改变
 # # CommentPragmas: ''
 
@@ -199,7 +201,7 @@ ColumnLimit: 80
 # IndentPPDirectives: AfterHash
 
 # # 缩进宽度
-# IndentWidth: 4
+IndentWidth: 4
 
 # # 函数返回类型换行时，缩进函数声明或函数定义的函数名
 # IndentWrappedFunctionNames: false
@@ -314,7 +316,7 @@ ColumnLimit: 80
 # Standard: Cpp11
 
 # # tab宽度
-# TabWidth: 4
+TabWidth: 4
 
 # # 使用tab字符: Never, ForIndentation, ForContinuationAndIndentation, Always
 # UseTab: Never
