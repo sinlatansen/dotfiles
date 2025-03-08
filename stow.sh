@@ -45,7 +45,6 @@ stow -R clang-format
 stow -R powerlevel-10k
 stow -R wezterm
 stow -R ideavim
-stow -R --target=$HOME/.config/neofetch neofetch
 stow -R --target=$HOME/.config/helix helix
 stow -R --target=$HOME/.config/lazygit lazygit
 stow -R --target=$HOME/.config/yazi yazi
@@ -57,7 +56,14 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 fi
 
 if [[ $(hostname) == "y9000p" ]]; then
+  stow -R --target=$HOME/.config/neofetch neofetch-mint
   stow -R --target=$HOME/.config/polybar polybar
   echo "Something of y9000p done."
 fi
+
+if [[ $(hostname) == "MacMini" ]]; then
+  stow -R --target=$HOME/.config/neofetch neofetch-mac
+  echo "Something of MacMini done."
+fi
+
 echo "Configurations have been stowed."
