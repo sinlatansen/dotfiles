@@ -9,11 +9,14 @@ if wezterm.config_builder then
 end
 
 -- 基本设置
--- config.color_scheme = "catppuccin-macchiato"
+-- config.color_scheme = "GruvboxDark"
+-- config.color_scheme = "Catppuccin Frappe"
 config.color_scheme = "nord"
+-- config.color_scheme = 'Tokyo Night Moon'
 config.font = wezterm.font_with_fallback {
-	{ family = "Ubuntu Mono Nerd Font", weight = 'Light', scale = 1.4 },
-	{ family = "Sarasa Term SC Nerd",   scale = 1.4 },
+	{ family = "Fira Code Nerd Font", scale = 1.2 },
+	-- { family = "Ubuntu Mono Nerd Font", weight = 'Light', scale = 1.4 },
+	{ family = "Sarasa Term SC Nerd", scale = 1.4 },
 }
 config.window_background_opacity = 0.9            -- 窗口背景透明度设为 0.9
 config.window_decorations = "RESIZE"              -- 窗口装饰允许调整大小

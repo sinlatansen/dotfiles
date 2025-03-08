@@ -96,8 +96,16 @@ elif [[ $(hostname) == "y9000p" ]]; then
   alias ca="unblock-airpods.sh"
   alias da="block-airpods.sh"
 
-  eval "$(ssh-agent -s)"
-  ssh-add ~/.ssh/id_ed25519'
+  # eval "$(ssh-agent -s)"
+  # ssh-add ~/.ssh/id_ed25519
+
+  eval "$(direnv hook zsh)"
+
+  alias rm="trash-put"
+
+  export PATH=$HOME/App/omnetpp/bin:$PATH
+  export LD_LIBRARY_PATH=$HOME/App/omnetpp/lib:$LD_LIBRARY_PATH
+  GITSTATUS_LOG_LEVEL=DEBUG
 
 fi
 
@@ -116,6 +124,7 @@ alias c="code ."
 alias ..="cd ../"
 alias ..l="cd ../ && ls -a"
 alias ..ll="cd ../ && ls -al"
+alias n="neofetch"
 
 alias ...='cd ../../..'
 alias ....='cd ../../../..'
