@@ -6,7 +6,6 @@ stow -D tmux
 stow -D clang-format
 stow -D powerlevel-10k
 stow -D wezterm
-stow -D neofetch
 stow -D helix
 stow -D lazygit
 stow -D yazi
@@ -18,7 +17,12 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 fi
 
 if [[ $(hostname) == "y9000p" ]]; then
+  stow -D neofetch-mint
   stow -D polybar
+fi
+
+if [[ $(hostname) == "MacMini" ]]; then
+  stow -D neofetch-mac
 fi
 
 # 创建必要的配置目录
