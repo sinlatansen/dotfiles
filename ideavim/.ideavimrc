@@ -1,5 +1,3 @@
 " Map jj to Escape
 inoremap jj <Esc>
 
-set relativenumber
-
