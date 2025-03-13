@@ -10,6 +10,7 @@ stow -D helix
 stow -D lazygit
 stow -D yazi
 stow -D ideavim
+stow -D i3
 
 if [[ $(hostname) == "MacBookPro" ]]; then
   stow -D yabai
@@ -37,6 +38,7 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 fi
 if [[ $(hostname) == "y9000p" ]]; then
   mkdir -p ~/.config/polybar
+  mkdir -p ~/.config/i3
 fi
 
 # 切换到 dotfiles 目录
@@ -62,6 +64,7 @@ fi
 if [[ $(hostname) == "y9000p" ]]; then
   stow -R --target=$HOME/.config/neofetch neofetch-mint
   stow -R --target=$HOME/.config/polybar polybar
+  stow -R --target=$HOME/.config/i3 i3
   echo "Something of y9000p done."
 fi
 
