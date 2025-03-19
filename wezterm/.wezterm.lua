@@ -14,9 +14,17 @@ end
 config.color_scheme = "nord"
 -- config.color_scheme = 'Tokyo Night Moon'
 config.font = wezterm.font_with_fallback {
-	{ family = "Fira Code Nerd Font", scale = 1.2 },
+	{ family = "0xProto Nerd Font",   scale = 1.2, weight = 'Light' },
+	-- { family = "Fira Code Nerd Font", scale = 1.2 },
 	-- { family = "Ubuntu Mono Nerd Font", weight = 'Light', scale = 1.4 },
 	{ family = "Sarasa Term SC Nerd", scale = 1.4 },
+}
+config.line_height = 1.2
+config.window_padding = {
+	left = 20,
+	right = 20,
+	top = 20,
+	bottom = 20,
 }
 config.window_background_opacity = 0.9            -- 窗口背景透明度设为 0.9
 config.window_decorations = "RESIZE"              -- 窗口装饰允许调整大小
@@ -39,22 +47,22 @@ config.keys = {
 	-- { key = "c", mods = "LEADER",       action = act.ActivateCopyMode }, -- Leader 键 + c 进入复制模式
 
 	-- 窗格键绑定
-	{ key = "-", mods = "LEADER",       action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },           -- Leader 键 + - 垂直分割当前窗格
-	{ key = "|", mods = "LEADER|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },         -- Leader 键 + | 水平分割当前窗格
-	{ key = "h", mods = "LEADER",       action = act.ActivatePaneDirection("Left") },                             -- Leader 键 + h 激活左侧窗格
-	{ key = "j", mods = "LEADER",       action = act.ActivatePaneDirection("Down") },                             -- Leader 键 + j 激活下方窗格
-	{ key = "k", mods = "LEADER",       action = act.ActivatePaneDirection("Up") },                               -- Leader 键 + k 激活上方窗格
-	{ key = "l", mods = "LEADER",       action = act.ActivatePaneDirection("Right") },                            -- Leader 键 + l 激活右侧窗格
-	{ key = "x", mods = "LEADER",       action = act.CloseCurrentPane({ confirm = false }) },                     -- Leader 键 + x 关闭当前窗格，无需确认
-	{ key = "z", mods = "LEADER",       action = act.TogglePaneZoomState },                                       -- Leader 键 + z 切换窗格缩放状态
-	{ key = "s", mods = "LEADER",       action = act.RotatePanes("Clockwise") },                                  -- Leader 键 + s 顺时针旋转窗格
+	{ key = "-", mods = "LEADER",       action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },             -- Leader 键 + - 垂直分割当前窗格
+	{ key = "|", mods = "LEADER|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },           -- Leader 键 + | 水平分割当前窗格
+	{ key = "h", mods = "LEADER",       action = act.ActivatePaneDirection("Left") },                               -- Leader 键 + h 激活左侧窗格
+	{ key = "j", mods = "LEADER",       action = act.ActivatePaneDirection("Down") },                               -- Leader 键 + j 激活下方窗格
+	{ key = "k", mods = "LEADER",       action = act.ActivatePaneDirection("Up") },                                 -- Leader 键 + k 激活上方窗格
+	{ key = "l", mods = "LEADER",       action = act.ActivatePaneDirection("Right") },                              -- Leader 键 + l 激活右侧窗格
+	{ key = "x", mods = "LEADER",       action = act.CloseCurrentPane({ confirm = false }) },                       -- Leader 键 + x 关闭当前窗格，无需确认
+	{ key = "z", mods = "LEADER",       action = act.TogglePaneZoomState },                                         -- Leader 键 + z 切换窗格缩放状态
+	{ key = "s", mods = "LEADER",       action = act.RotatePanes("Clockwise") },                                    -- Leader 键 + s 顺时针旋转窗格
 	{ key = "r", mods = "LEADER",       action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) }, -- Leader 键 + r 激活窗格调整模式
 
 	-- 标签页键绑定
 	{ key = "c", mods = "LEADER",       action = act.SpawnTab("CurrentPaneDomain") }, -- Leader 键 + n 新建标签页
-	{ key = "p", mods = "LEADER",       action = act.ActivateTabRelative(-1) },    -- Leader 键 + [ 切换到前一个标签页
-	{ key = "n", mods = "LEADER",       action = act.ActivateTabRelative(1) },     -- Leader 键 + ] 切换到下一个标签页
-	{ key = "t", mods = "LEADER",       action = act.ShowTabNavigator },           -- Leader 键 + t 显示标签页导航器
+	{ key = "p", mods = "LEADER",       action = act.ActivateTabRelative(-1) },      -- Leader 键 + [ 切换到前一个标签页
+	{ key = "n", mods = "LEADER",       action = act.ActivateTabRelative(1) },       -- Leader 键 + ] 切换到下一个标签页
+	{ key = "t", mods = "LEADER",       action = act.ShowTabNavigator },             -- Leader 键 + t 显示标签页导航器
 
 	-- 最后，工作空间
 	{ key = "w", mods = "LEADER",       action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) }, -- Leader 键 + w 显示工作空间启动器
@@ -73,18 +81,18 @@ config.key_tables = {
 	resize_pane = {
 		{ key = "h",      action = act.AdjustPaneSize({ "Left", 1 }) }, -- h 键调整窗格大小（左）
 		{ key = "j",      action = act.AdjustPaneSize({ "Down", 1 }) }, -- j 键调整窗格大小（下）
-		{ key = "k",      action = act.AdjustPaneSize({ "Up", 1 }) }, -- k 键调整窗格大小（上）
+		{ key = "k",      action = act.AdjustPaneSize({ "Up", 1 }) },  -- k 键调整窗格大小（上）
 		{ key = "l",      action = act.AdjustPaneSize({ "Right", 1 }) }, -- l 键调整窗格大小（右）
-		{ key = "Escape", action = "PopKeyTable" },                -- Escape 键退出当前键表
-		{ key = "Enter",  action = "PopKeyTable" },                -- Enter 键退出当前键表
+		{ key = "Escape", action = "PopKeyTable" },                    -- Escape 键退出当前键表
+		{ key = "Enter",  action = "PopKeyTable" },                    -- Enter 键退出当前键表
 	},
 	move_tab = {
 		{ key = "h",      action = act.MoveTabRelative(-1) }, -- h 键向左移动标签页
 		{ key = "j",      action = act.MoveTabRelative(-1) }, -- j 键向左移动标签页
 		{ key = "k",      action = act.MoveTabRelative(1) }, -- k 键向右移动标签页
 		{ key = "l",      action = act.MoveTabRelative(1) }, -- l 键向右移动标签页
-		{ key = "Escape", action = "PopKeyTable" },     -- Escape 键退出当前键表
-		{ key = "Enter",  action = "PopKeyTable" },     -- Enter 键退出当前键表
+		{ key = "Escape", action = "PopKeyTable" },         -- Escape 键退出当前键表
+		{ key = "Enter",  action = "PopKeyTable" },         -- Enter 键退出当前键表
 	},
 }
 

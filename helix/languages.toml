@@ -25,3 +25,9 @@ language-servers = ["vscode-json-language-server"]
 [language.formatter]
 command = "prettier"
 args = ["--stdin-filepath", "%s"]
+
+[[language]]
+name = "lua"
+auto-format = true
+language-servers = ["lua-language-server"]
+

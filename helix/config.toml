@@ -1,4 +1,4 @@
-theme = "onedark"
+theme = "my-theme"
 
 [editor]
 line-number = "relative"
@@ -7,6 +7,9 @@ cursorcolumn = true
 bufferline = "always"
 auto-format = true
 true-color = true
+shell = ["zsh", "-c"]
+scrolloff = 10
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -15,12 +18,12 @@ select = "underline"
 
 [editor.statusline]
 left = ["mode", "spinner"]
-center = ["file-name"]
-right = ["diagnostics", "selections", "position", "file-type"]
+center = ["file-name", "file-modification-indicator", "read-only-indicator", "spinner"]
+right = ["diagnostics", "file-type"]
 separator = "|"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+mode.normal = " NOR"
+mode.insert = "󰌌 INS"
+mode.select = " SEL"
 
 [editor.file-picker]
 hidden = false
@@ -28,5 +31,20 @@ hidden = false
 [editor.search]
 wrap-around = true
 
+[editor.indent-guides]
+render = true
+character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
 [keys.insert]
 j = { j = "normal_mode" }
+
+[keys.normal."["]
+"[" = "goto_previous_buffer"
+
+[keys.normal."]"]
+"]" = "goto_next_buffer" 
+
+[keys.normal.space]
+l = ":toggle lsp.display-inlay-hints"
+w = ":w"

@@ -1,3 +1,6 @@
 " Map jj to Escape
 inoremap jj <Esc>
 
+" Enable relative line numbers
+set relativenumber
+

@@ -93,8 +93,8 @@ elif [[ $(hostname) == "y9000p" ]]; then
   ZSH_THEME="powerlevel10k/powerlevel10k"
 
   alias cubemx="flatpak run com.st.STM32CubeMX"
-  alias ca="unblock-airpods.sh"
-  alias da="block-airpods.sh"
+  alias ob="bluetoothctl power on"
+  alias cb="bluetoothctl power off; cinnamon-screensaver-command --lock"
 
   # eval "$(ssh-agent -s)"
   # ssh-add ~/.ssh/id_ed25519
@@ -106,6 +106,9 @@ elif [[ $(hostname) == "y9000p" ]]; then
   export PATH=$HOME/App/omnetpp/bin:$PATH
   export LD_LIBRARY_PATH=$HOME/App/omnetpp/lib:$LD_LIBRARY_PATH
   GITSTATUS_LOG_LEVEL=DEBUG
+
+  # lua lsp
+  export PATH=$PATH:/opt/lua-language-server/bin
 
 fi
 
@@ -120,7 +123,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting copyfile copypath sudo 
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias c="code ."
 alias ..="cd ../"
 alias ..l="cd ../ && ls -a"
 alias ..ll="cd ../ && ls -al"
@@ -137,7 +139,7 @@ alias .5='cd ../../../../..'
 alias zshrc='hx ~/.zshrc'
 alias update="source ~/.zshrc"
 alias cls="clear"
-alias h='history'
+alias h='history | fzf --no-preview'
 
 alias df='duf'
 alias md="mkdir"
@@ -203,6 +205,29 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# fzf
+source <(fzf --zsh)
+
+export FZF_COMPLETION_TRIGGER=''
+bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion
+
+export FZF_DEFAULT_OPTS="--height 70% --layout=reverse --border=bold --border=rounded --margin=3% --color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C
+--color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B --walker-skip .git,node_modules,target --preview 'batcat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+export FZF_CTRL_T_OPTS="--preview 'batcat --color=always {}'"
+
+PATH="$PATH:./node_modules/.bin"
+
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# helix
+export EDITOR=hx
+
 # Welcome message
 if [[ $(hostname) == "jdCloud" ]]; then
   
@@ -225,10 +250,3 @@ elif [[ $(hostname) == "y9000p" ]]; then
 
 fi
 
-PATH="$PATH:./node_modules/.bin"
-
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
