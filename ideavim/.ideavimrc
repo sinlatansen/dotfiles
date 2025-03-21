@@ -4,3 +4,12 @@ inoremap jj <Esc>
 " Enable relative line numbers
 set relativenumber
 
+let mapleader=" "
+
+nnoremap <Leader><Leader> :w<CR>
+
+nnoremap ]] :bnext<CR>
+nnoremap [[ :bprev<CR>
+
+
+

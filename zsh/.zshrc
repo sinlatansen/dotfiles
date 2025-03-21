@@ -110,6 +110,15 @@ elif [[ $(hostname) == "y9000p" ]]; then
   # lua lsp
   export PATH=$PATH:/opt/lua-language-server/bin
 
+  export GTK_IM_MODULE=fcitx
+  export QT_IM_MODULE=fcitx
+  export XMODIFIERS=@im=fcitx
+
+  # presenterm
+  alias md2slide="presenterm"
+
+  eval "$(zoxide init zsh)"
+
 fi
 
 # nvm
@@ -118,7 +127,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting copyfile copypath sudo z)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting copyfile copypath sudo)
 
 source $ZSH/oh-my-zsh.sh
 

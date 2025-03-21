@@ -1,3 +1,19 @@
+[general]
+auto_save_config = true
+
 [manager]
+# 比例
+ratio = [3, 4, 8]
 show_hidden = true
 remove_method = "delete"
+scrolloff = 10
+
+[preview]
+max_width = 2000
+max_height = 2000
+
+[sorting]
+sort_by = "date" # name, size, date
+
+[plugins]
+enabled_plugins = ["git"]

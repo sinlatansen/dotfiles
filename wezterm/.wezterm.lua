@@ -39,6 +39,8 @@ config.inactive_pane_hsb = {
 	brightness = 0.5, -- 亮度调低到 0.5
 }
 
+config.xim_im_name = 'fcitx'
+
 -- 键绑定
 config.leader = { key = "k", mods = "CTRL", timeout_milliseconds = 1000 } -- 设置 Leader 键为 Ctrl + k，并且超时为 1000 毫秒
 config.keys = {
@@ -59,13 +61,17 @@ config.keys = {
 	{ key = "r", mods = "LEADER",       action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) }, -- Leader 键 + r 激活窗格调整模式
 
 	-- 标签页键绑定
-	{ key = "c", mods = "LEADER",       action = act.SpawnTab("CurrentPaneDomain") }, -- Leader 键 + n 新建标签页
-	{ key = "p", mods = "LEADER",       action = act.ActivateTabRelative(-1) },      -- Leader 键 + [ 切换到前一个标签页
-	{ key = "n", mods = "LEADER",       action = act.ActivateTabRelative(1) },       -- Leader 键 + ] 切换到下一个标签页
+	{ key = "c", mods = "LEADER",       action = act.SpawnTab("CurrentPaneDomain") }, -- Leader 键 + c 新建标签页
+	{ key = "p", mods = "LEADER",       action = act.ActivateTabRelative(-1) },      -- Leader 键 + p 切换到前一个标签页
+	{ key = "n", mods = "LEADER",       action = act.ActivateTabRelative(1) },       -- Leader 键 + n 切换到下一个标签页
 	{ key = "t", mods = "LEADER",       action = act.ShowTabNavigator },             -- Leader 键 + t 显示标签页导航器
 
 	-- 最后，工作空间
 	{ key = "w", mods = "LEADER",       action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) }, -- Leader 键 + w 显示工作空间启动器
+
+	-- 翻页
+	{ key = "u", mods = "CTRL",         action = wezterm.action.ScrollByPage(-1) }, -- 向上翻页
+	{ key = "d", mods = "CTRL",         action = wezterm.action.ScrollByPage(1) }, -- 向下翻页
 }
 
 -- 快速切换到指定索引的标签页
