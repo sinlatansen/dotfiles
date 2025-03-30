@@ -19,6 +19,7 @@ fi
 if [[ $(hostname) == "y9000p" ]]; then
   stow -D neofetch-mint
   stow -D polybar
+  stow -D conky
 fi
 
 if [[ $(hostname) == "MacMini" ]]; then
@@ -37,6 +38,7 @@ if [[ $(hostname) == "MacBookPro" ]]; then
 fi
 if [[ $(hostname) == "y9000p" ]]; then
   mkdir -p ~/.config/polybar
+  mkdir -p ~/.config/conky
 fi
 
 # 切换到 dotfiles 目录
@@ -62,6 +64,7 @@ fi
 if [[ $(hostname) == "y9000p" ]]; then
   stow -R --target=$HOME/.config/neofetch neofetch-mint
   stow -R --target=$HOME/.config/polybar polybar
+  stow -R --target=$HOME/.config/conky conky
   echo "Something of y9000p done."
 fi
 

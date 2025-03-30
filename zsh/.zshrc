@@ -119,6 +119,16 @@ elif [[ $(hostname) == "y9000p" ]]; then
 
   eval "$(zoxide init zsh)"
 
+  # Allow Ctrl-z to toggle between suspend and resume
+  function Resume {
+    fg
+    zle push-input
+    BUFFER=""
+    zle accept-line
+  }
+  zle -N Resume
+  bindkey "^Z" Resume
+
 fi
 
 # nvm
@@ -191,18 +201,12 @@ alias bll="/bin/ls -al"
 alias ll='lsd -l'
 alias lla='lsd -al'
 
-# github copliot
-alias ghcs="gh copilot suggest"
-alias ghce="gh copilot explain"
-
 # makefile
 alias gm="cp ~/dotfiles/makefile/makefile ."
 alias gM="cp ~/dotfiles/makefile/makefile Makefile"
 
 # 避免粘贴格式损坏
 DISABLE_MAGIC_FUNCTIONS="true"
-
-# eval $(thefuck --alias f)
 
 # yazi
 function y() {

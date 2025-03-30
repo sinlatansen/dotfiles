@@ -47,6 +47,6 @@ j = { j = "normal_mode" }
 
 [keys.normal.space]
 l = ":toggle lsp.display-inlay-hints"
-w = ":w"
+space = ":w"
 q = ":q"
 x = ":bc"
