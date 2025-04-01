@@ -1,6 +1,7 @@
 aaron-bond.better-comments
 akamud.vscode-theme-onedark
 alefragnani.project-manager
+anhoder.gruvbox-anhoder
 arcticicestudio.nord-visual-studio-code
 be5invis.vscode-custom-css
 bodil.file-browser
