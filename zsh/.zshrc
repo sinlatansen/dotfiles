@@ -88,7 +88,7 @@ elif [[ $(hostname) == "y9000p" ]]; then
 
   export PATH=$PATH:$HOME/.dotnet
   export DOTNET_ROOT=$HOME/.dotnet
-  export PATH=$PATH:$HOME/workspace/scripts
+  export PATH=$PATH:$HOME/dotfiles/scripts
 
   ZSH_THEME="powerlevel10k/powerlevel10k"
 

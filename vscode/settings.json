@@ -51,9 +51,6 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
   "[snippets]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -84,7 +81,9 @@
   "apc.header": {
     "height": 36
   },
-  "apc.imports": [],
+  "apc.imports": [
+    "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+  ],
   "apc.listRow": {
     "fontSize": 14,
     "height": 30,
@@ -2057,7 +2056,7 @@
   "window.title": "${dirty}${remoteName}${separator}${rootNameShort}",
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Gruvbox Dark Soft",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
   "workbench.sideBar.location": "right",
