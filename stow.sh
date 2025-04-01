@@ -20,6 +20,7 @@ if [[ $(hostname) == "y9000p" ]]; then
   stow -D neofetch-mint
   stow -D polybar
   stow -D conky
+  stow -D vscode
 fi
 
 if [[ $(hostname) == "MacMini" ]]; then
@@ -65,6 +66,7 @@ if [[ $(hostname) == "y9000p" ]]; then
   stow -R --target=$HOME/.config/neofetch neofetch-mint
   stow -R --target=$HOME/.config/polybar polybar
   stow -R --target=$HOME/.config/conky conky
+  stow -R --target=$HOME/.config/Code/User vscode
   echo "Something of y9000p done."
 fi
 
