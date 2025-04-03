@@ -36,6 +36,7 @@ config.inactive_pane_hsb = {
 	brightness = 0.5, -- 亮度调低到 0.5
 }
 
+-- fcitx
 config.xim_im_name = 'fcitx'
 
 -- 键绑定
@@ -99,46 +100,7 @@ config.key_tables = {
 	},
 }
 
--- 标签栏
-config.use_fancy_tab_bar = false     -- 禁用 Fancy Tab Bar
-config.status_update_interval = 1000 -- 状态更新间隔为 1000 毫秒
-wezterm.on("update-right-status", function(window, pane)
-	-- 显示工作空间名称
-	local stat = window:active_workspace()
-	-- 如果有活动的键表，显示键表名称
-	if window:active_key_table() then
-		stat = window:active_key_table()
-	end
-	-- 如果 Leader 键激活，显示 "LDR"
-	if window:leader_is_active() then
-		stat = "LDR"
-	end
-
-	-- 当前工作目录
-	local basename = function(s)
-		-- 提取最后一个文件夹或文件名
-		return string.gsub(s, "(.*[/\\])(.*)", "%2")
-	end
-	local cwd = basename(pane:get_current_working_dir())
-	-- 当前命令
-	local cmd = basename(pane:get_foreground_process_name())
-
-	-- 时间
-	local time = wezterm.strftime("%H:%M")
-
-	-- 更新右侧状态栏
-	window:set_right_status(wezterm.format({
-		{ Text = wezterm.nerdfonts.oct_table .. "  " .. stat }, -- 显示工作空间或键表名称
-		{ Text = " | " },
-		{ Text = wezterm.nerdfonts.md_folder .. "  " .. cwd }, -- 显示当前工作目录
-		{ Text = " | " },
-		{ Foreground = { Color = "FFB86C" } },
-		{ Text = wezterm.nerdfonts.fa_code .. "  " .. cmd }, -- 显示当前命令
-		"ResetAttributes",
-		{ Text = " | " },
-		{ Text = wezterm.nerdfonts.md_clock .. "  " .. time }, -- 显示时间
-		{ Text = " |" },
-	}))
-end)
+-- tmux
+config.default_prog = { "/usr/bin/zsh", "-c", "tmux attach || tmux new-session -s default" }
 
 return config -- 返回配置对象
