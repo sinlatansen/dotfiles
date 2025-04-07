@@ -1,0 +1,106 @@
+-- WezTerm 必要模块
+local wezterm = require("wezterm")
+local act = wezterm.action
+
+local config = {}
+-- 如果可能，使用 config_builder 对象
+if wezterm.config_builder then
+	config = wezterm.config_builder()
+end
+
+-- 基本设置
+config.color_scheme = "Gruvbox dark, soft (base16)"
+config.font = wezterm.font_with_fallback {
+	{ family = "0xProto Nerd Font",   scale = 1.2, weight = 'Light' },
+	-- { family = "Fira Code Nerd Font", scale = 1.2 },
+	-- { family = "Ubuntu Mono Nerd Font", weight = 'Light', scale = 1.4 },
+	{ family = "Sarasa Term SC Nerd", scale = 1.4 },
+}
+config.line_height = 1.2
+config.window_padding = {
+	left = 20,
+	right = 20,
+	top = 20,
+	bottom = 20,
+}
+config.window_background_opacity = 0.9            -- 窗口背景透明度设为 0.9
+config.window_decorations = "RESIZE"              -- 窗口装饰允许调整大小
+config.window_close_confirmation = "AlwaysPrompt" -- 关闭窗口时始终提示确认
+config.scrollback_lines = 3000                    -- 滚动缓冲区的行数设为 3000
+config.default_workspace = "home"                 -- 默认工作空间设为 "home"
+config.hide_tab_bar_if_only_one_tab = true        -- 只有一个标签页时隐藏标签栏
+
+-- 调暗非活动窗格
+config.inactive_pane_hsb = {
+	saturation = 0.24, -- 饱和度调低到 0.24
+	brightness = 0.5, -- 亮度调低到 0.5
+}
+
+-- fcitx
+config.xim_im_name = 'fcitx'
+
+-- 键绑定
+config.leader = { key = "k", mods = "CTRL", timeout_milliseconds = 1000 } -- 设置 Leader 键为 Ctrl + k，并且超时为 1000 毫秒
+config.keys = {
+	-- 当按两次 Ctrl + k 时发送 C-k
+	{ key = "k", mods = "LEADER",       action = act.SendKey({ key = "k", mods = "CTRL" }) }, -- Leader 键 + k 发送 Ctrl + k
+	-- { key = "c", mods = "LEADER",       action = act.ActivateCopyMode }, -- Leader 键 + c 进入复制模式
+
+	-- 窗格键绑定
+	{ key = "-", mods = "LEADER",       action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },           -- Leader 键 + - 垂直分割当前窗格
+	{ key = "|", mods = "LEADER|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },         -- Leader 键 + | 水平分割当前窗格
+	{ key = "h", mods = "LEADER",       action = act.ActivatePaneDirection("Left") },                             -- Leader 键 + h 激活左侧窗格
+	{ key = "j", mods = "LEADER",       action = act.ActivatePaneDirection("Down") },                             -- Leader 键 + j 激活下方窗格
+	{ key = "k", mods = "LEADER",       action = act.ActivatePaneDirection("Up") },                               -- Leader 键 + k 激活上方窗格
+	{ key = "l", mods = "LEADER",       action = act.ActivatePaneDirection("Right") },                            -- Leader 键 + l 激活右侧窗格
+	{ key = "x", mods = "LEADER",       action = act.CloseCurrentPane({ confirm = false }) },                     -- Leader 键 + x 关闭当前窗格，无需确认
+	{ key = "z", mods = "LEADER",       action = act.TogglePaneZoomState },                                       -- Leader 键 + z 切换窗格缩放状态
+	{ key = "s", mods = "LEADER",       action = act.RotatePanes("Clockwise") },                                  -- Leader 键 + s 顺时针旋转窗格
+	{ key = "r", mods = "LEADER",       action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) }, -- Leader 键 + r 激活窗格调整模式
+
+	-- 标签页键绑定
+	{ key = "c", mods = "LEADER",       action = act.SpawnTab("CurrentPaneDomain") }, -- Leader 键 + c 新建标签页
+	{ key = "p", mods = "LEADER",       action = act.ActivateTabRelative(-1) },    -- Leader 键 + p 切换到前一个标签页
+	{ key = "n", mods = "LEADER",       action = act.ActivateTabRelative(1) },     -- Leader 键 + n 切换到下一个标签页
+	{ key = "t", mods = "LEADER",       action = act.ShowTabNavigator },           -- Leader 键 + t 显示标签页导航器
+
+	-- 最后，工作空间
+	{ key = "w", mods = "LEADER",       action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) }, -- Leader 键 + w 显示工作空间启动器
+
+	-- 翻页
+	{ key = "u", mods = "CTRL",         action = wezterm.action.ScrollByPage(-1) }, -- 向上翻页
+	{ key = "d", mods = "CTRL",         action = wezterm.action.ScrollByPage(1) }, -- 向下翻页
+}
+
+-- 快速切换到指定索引的标签页
+for i = 1, 9 do
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = "LEADER",
+		action = act.ActivateTab(i - 1), -- Leader 键 + 数字 1-9 切换到相应的标签页（索引从 0 开始）
+	})
+end
+
+config.key_tables = {
+	resize_pane = {
+		{ key = "h",      action = act.AdjustPaneSize({ "Left", 1 }) }, -- h 键调整窗格大小（左）
+		{ key = "j",      action = act.AdjustPaneSize({ "Down", 1 }) }, -- j 键调整窗格大小（下）
+		{ key = "k",      action = act.AdjustPaneSize({ "Up", 1 }) }, -- k 键调整窗格大小（上）
+		{ key = "l",      action = act.AdjustPaneSize({ "Right", 1 }) }, -- l 键调整窗格大小（右）
+		{ key = "Escape", action = "PopKeyTable" },                -- Escape 键退出当前键表
+		{ key = "Enter",  action = "PopKeyTable" },                -- Enter 键退出当前键表
+	},
+	move_tab = {
+		{ key = "h",      action = act.MoveTabRelative(-1) }, -- h 键向左移动标签页
+		{ key = "j",      action = act.MoveTabRelative(-1) }, -- j 键向左移动标签页
+		{ key = "k",      action = act.MoveTabRelative(1) }, -- k 键向右移动标签页
+		{ key = "l",      action = act.MoveTabRelative(1) }, -- l 键向右移动标签页
+		{ key = "Escape", action = "PopKeyTable" },     -- Escape 键退出当前键表
+		{ key = "Enter",  action = "PopKeyTable" },     -- Enter 键退出当前键表
+	},
+}
+
+-- tmux
+config.default_prog = { "/usr/bin/zsh", "-c", "tmux attach || tmux new-session -s default" }
+
+return config -- 返回配置对象
