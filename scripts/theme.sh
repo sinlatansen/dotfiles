@@ -6,7 +6,7 @@ themes=("nord" "dracula" "gruvbox")
 # 主题映射
 declare -A vscode_themes=(
     ["nord"]="Catppuccin Macchiato"
-    ["dracula"]="Dracula Theme Soft"
+    ["dracula"]="Dracula Theme"
     ["gruvbox"]="Gruvbox Dark Soft"
 )
 

@@ -27,6 +27,9 @@
     ],
     "editor.tabSize": 2
   },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.tabSize": 2
@@ -62,6 +65,9 @@
   },
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "animations.Command-Palette": "None",
   "animations.CursorAnimation": false,
@@ -239,6 +245,7 @@
   "banjiao.switch": false,
   "breadcrumbs.filePath": "last",
   "commentTranslate.hover.content": false,
+  "continue.enableTabAutocomplete": false,
   "diffEditor.wordWrap": "off",
   "doxdocgen.c.firstLine": "/********************************************************************",
   "doxdocgen.c.lastLine": " ********************************************************************/",
@@ -449,6 +456,7 @@
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "liveServer.settings.donotShowInfoMsg": true,
   "makefile.configureOnOpen": true,
   "markdown.copyFiles.destination": {
     "**/*.md": "${documentBaseName}.assets/${fileName}"
@@ -470,7 +478,9 @@
   "notebook.output.fontFamily": "Maple Mono NF",
   "npm.packageManager": "npm",
   "projectManager.sortList": "Recent",
+  "redhat.telemetry.enabled": true,
   "search.quickOpen.includeSymbols": true,
+  "search.useIgnoreFiles": false,
   "security.workspace.trust.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.external.windowsExec": "%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
@@ -2056,19 +2066,10 @@
   "window.title": "${dirty}${remoteName}${separator}${rootNameShort}",
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Gruvbox Dark Soft",
+  "workbench.colorTheme": "Dracula Theme",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  "workbench.tree.indent": 16,
-  "redhat.telemetry.enabled": true,
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "continue.enableTabAutocomplete": false,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "liveServer.settings.donotShowInfoMsg": true
+  "workbench.tree.indent": 16
 }
