@@ -5,15 +5,15 @@
   "C_Cpp.inlayHints.parameterNames.enabled": true,
   "C_Cpp.inlayHints.referenceOperator.enabled": true,
   "C_Cpp.inlayHints.referenceOperator.showSpace": true,
-  "C_Cpp.intelliSenseEngine": "disabled",
+  "C_Cpp.intelliSenseEngine": "default",
   "C_Cpp.renameRequiresIdentifier": false,
   "EIDE.ARM.GCC.InstallDirectory": "/usr",
   "EIDE.ARM.INI.Path": "",
   "EIDE.C51.INI.Path": "",
   "[c]": {
-    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.defaultFormatter": "ms-vscode.cpptools",
     "editor.rulers": [
-      100
+      120
     ],
     "editor.tabSize": 2
   },
@@ -23,7 +23,7 @@
   "[h]": {
     "editor.defaultFormatter": "ms-vscode.cpptools",
     "editor.rulers": [
-      100
+      120
     ],
     "editor.tabSize": 2
   },
@@ -242,7 +242,7 @@
       "half": "|"
     }
   ],
-  "banjiao.switch": false,
+  "banjiao.switch": true,
   "breadcrumbs.filePath": "last",
   "commentTranslate.hover.content": false,
   "continue.enableTabAutocomplete": false,
@@ -2066,7 +2066,7 @@
   "window.title": "${dirty}${remoteName}${separator}${rootNameShort}",
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Dracula Theme",
+  "workbench.colorTheme": "Gruvbox Dark Soft",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
   "workbench.sideBar.location": "right",

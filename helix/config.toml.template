@@ -1,4 +1,4 @@
-theme = "dracula"
+theme = "gruvbox_dark_soft"
 
 [editor]
 line-number = "relative"
@@ -18,7 +18,12 @@ select = "underline"
 
 [editor.statusline]
 left = ["mode", "spinner"]
-center = ["file-name", "file-modification-indicator", "read-only-indicator", "spinner"]
+center = [
+    "file-name",
+    "file-modification-indicator",
+    "read-only-indicator",
+    "spinner",
+]
 right = ["diagnostics", "file-type"]
 separator = "|"
 mode.normal = " NOR"
@@ -27,7 +32,6 @@ mode.select = " SEL"
 
 [editor.file-picker]
 hidden = false
-git-ignore = false
 
 [editor.search]
 wrap-around = true
@@ -44,7 +48,7 @@ j = { j = "normal_mode" }
 "[" = "goto_previous_buffer"
 
 [keys.normal."]"]
-"]" = "goto_next_buffer" 
+"]" = "goto_next_buffer"
 
 [keys.normal.space]
 l = ":toggle lsp.display-inlay-hints"

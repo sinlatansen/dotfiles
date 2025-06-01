@@ -29,7 +29,6 @@ hars.cppsnippets
 intellsmi.comment-translate
 jacobdufault.fuzzy-search
 kahole.magit
-llvm-vs-code-extensions.vscode-clangd
 mhutchie.git-graph
 monokai.theme-monokai-pro-vscode
 ms-ceintl.vscode-language-pack-zh-hans
@@ -53,6 +52,7 @@ ms-vscode.makefile-tools
 ms-vscode.remote-explorer
 ms-vscode.remote-repositories
 ms-vscode.vscode-serial-monitor
+ms-vscode.wordcount
 njpwerner.autodocstring
 opensim.omnetpp-vscode
 redhat.vscode-xml
