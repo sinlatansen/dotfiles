@@ -9,7 +9,7 @@ if wezterm.config_builder then
 end
 
 -- 基本设置
-config.color_scheme = "Gruvbox dark, soft (base16)"
+config.color_scheme = "Dracula (Official)"
 config.font = wezterm.font_with_fallback {
 	{ family = "0xProto Nerd Font",      scale = 1.2, weight = 'Light' },
 	{ family = "SourceHanSansCN-Normal", scale = 1.4 },

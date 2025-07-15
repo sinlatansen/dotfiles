@@ -242,7 +242,7 @@
       "half": "|"
     }
   ],
-  "banjiao.switch": true,
+  "banjiao.switch": false,
   "breadcrumbs.filePath": "last",
   "commentTranslate.hover.content": false,
   "continue.enableTabAutocomplete": false,
@@ -291,8 +291,8 @@
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 5,
-  // "editor.fontFamily": "Maple Mono NF",
-  "editor.fontFamily": "Rec Mono Duotone, Monaspace Argon, Jetbrains Mono, Microsoft YaHei Mono, Roboto Mono, Ubuntu Nerd Font Mono, Hack Nerd Font, IBM PLEX MONO, Lilex, Cascadia Code, Consolas, FiraCode Nerd Font Mono, Source Han Sans CN VF",
+  "editor.fontFamily": "Maple Mono NF",
+  // "editor.fontFamily": "Rec Mono Duotone, Monaspace Argon, Jetbrains Mono, Microsoft YaHei Mono, Roboto Mono, Ubuntu Nerd Font Mono, Hack Nerd Font, IBM PLEX MONO, Lilex, Cascadia Code, Consolas, FiraCode Nerd Font Mono, Source Han Sans CN VF",
   // "editor.fontLigatures": true,
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'calt' ",
   "editor.fontSize": 14,
@@ -2066,7 +2066,7 @@
   "window.title": "${dirty}${remoteName}${separator}${rootNameShort}",
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Gruvbox Dark Soft",
+  "workbench.colorTheme": "Dracula Theme",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
   "workbench.sideBar.location": "right",

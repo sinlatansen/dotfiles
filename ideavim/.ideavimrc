@@ -11,5 +11,11 @@ nnoremap <Leader><Leader> :w<CR>
 nnoremap ]] :bnext<CR>
 nnoremap [[ :bprev<CR>
 
+" which-key
+set which-key
+set notimeout
+
+" ignore case totally
+set ignorecase
 
 

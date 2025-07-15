@@ -76,10 +76,13 @@ gsettings set org.cinnamon.desktop.interface icon-theme ${icon_themes[$THEME]}
 gsettings set org.cinnamon.theme name ${app_themes[$THEME]}
 
 # 更换壁纸
-WALLPAPER="$WALLPAPER_DIR/$THEME.png"
-if [[ -f "$WALLPAPER" ]]; then
-    echo "更换壁纸"
-    gsettings set org.cinnamon.desktop.background picture-uri "file://$WALLPAPER"
-fi
+for ext in png jpg jpeg webp; do
+    img_file="$WALLPAPER_DIR/$THEME.$ext"
+    if [[ -f "$img_file" ]]; then
+        echo "更换壁纸: $img_file"
+        gsettings set org.cinnamon.desktop.background picture-uri "file://$img_file"
+        break
+    fi
+done
 
 echo "主题已切换为: $THEME"

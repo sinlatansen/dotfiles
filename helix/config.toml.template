@@ -1,4 +1,4 @@
-theme = "gruvbox_dark_soft"
+theme = "dracula"
 
 [editor]
 line-number = "relative"
