@@ -2066,7 +2066,7 @@
   "window.title": "${dirty}${remoteName}${separator}${rootNameShort}",
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Dracula Theme",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
   "workbench.sideBar.location": "right",

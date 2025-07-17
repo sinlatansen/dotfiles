@@ -96,6 +96,8 @@ elif [[ $(hostname) == "y9000p" ]]; then
   alias ob="bluetoothctl power on"
   alias cb="bluetoothctl power off; cinnamon-screensaver-command --lock"
 
+  alias mc="mingchao.sh"
+
   # eval "$(ssh-agent -s)"
   # ssh-add ~/.ssh/id_ed25519
 
