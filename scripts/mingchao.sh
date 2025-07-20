@@ -2,7 +2,7 @@
 
 # -q 签到
 if [[ "$1" == "-q" ]]; then
-    cd /home/lzy/workspace/py/Kuro-autosignin
+    cd /home/lzy/workspace/py/mingchao/Kuro-autosignin
     uv run main.py
 fi
 
