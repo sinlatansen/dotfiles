@@ -13,6 +13,9 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export http_proxy="http://127.0.0.1:7890"
 export https_proxy="http://127.0.0.1:7890"
 
+export LANG=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+
 ZSH_THEME="ys"
 
 if [[ $(hostname) == "MacBookPro" ]]; then
@@ -64,9 +67,6 @@ elif [[ $(hostname) == "jdCloud" ]]; then
 elif [[ $(hostname) == "MacMini" ]]; then
 
   ZSH_THEME="powerlevel10k/powerlevel10k"
-
-  export LANG=zh_CN.UTF-8
-  export LC_ALL=zh_CN.UTF-8
 
   export http_proxy=http://127.0.0.1:7890
   export https_proxy=http://127.0.0.1:7890
