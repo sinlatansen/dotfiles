@@ -80,6 +80,8 @@ elif [[ $(hostname) == "MacMini" ]]; then
   # 用trash代替rm
   alias rm="trash"
 
+  eval "$(zoxide init zsh)"
+
 elif [[ $(hostname) == "zongbao-BUAA" ]]; then
 
   alias fd="fdfind"
