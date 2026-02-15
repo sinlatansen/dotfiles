@@ -1,34 +1,20 @@
 {
-  "C_Cpp.doxygen.generateOnType": false,
-  "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
-  "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
-  "C_Cpp.inlayHints.parameterNames.enabled": true,
-  "C_Cpp.inlayHints.referenceOperator.enabled": true,
-  "C_Cpp.inlayHints.referenceOperator.showSpace": true,
-  "C_Cpp.intelliSenseEngine": "default",
-  "C_Cpp.renameRequiresIdentifier": false,
-  "EIDE.ARM.GCC.InstallDirectory": "/usr",
-  "EIDE.ARM.INI.Path": "",
-  "EIDE.C51.INI.Path": "",
   "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.defaultFormatter": "xaver.clang-format",
     "editor.rulers": [
       120
     ],
     "editor.tabSize": 2
   },
   "[cpp]": {
-    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    "editor.defaultFormatter": "xaver.clang-format"
   },
   "[h]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.defaultFormatter": "xaver.clang-format",
     "editor.rulers": [
       120
     ],
     "editor.tabSize": 2
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
@@ -54,6 +40,9 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[snippets]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -66,64 +55,10 @@
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
   "animations.Command-Palette": "None",
   "animations.CursorAnimation": false,
-  "animations.Install-Method": "Apc Customize UI++",
   "animations.Scrolling": "None",
   "animations.Smooth-Mode": true,
-  "apc.activityBar": {
-    "itemMargin": 4,
-    "itemSize": 28,
-    "position": "bottom",
-    "size": 26
-  },
-  "apc.electron": {
-    "titleBarStyle": "hidden"
-  },
-  "apc.font.family": "Maple Mono NF",
-  "apc.header": {
-    "height": 36
-  },
-  "apc.imports": [
-    "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-  ],
-  "apc.listRow": {
-    "fontSize": 14,
-    "height": 30,
-    "lists": [
-      "customview-tree",
-      "results",
-      "open-editors",
-      "explorer-folders-view",
-      "outline-tree",
-      "scm-view",
-      "debug-view-content",
-      "debug-breakpoints",
-      "customview-tree",
-      "quick-input-list"
-      // "tree"
-    ]
-  },
-  "apc.menubar.compact": true,
-  "apc.sidebar.titlebar": {
-    "height": 36
-  },
-  "apc.statusBar": {
-    "fontSize": 13,
-    "height": 26,
-    "position": "editor-bottom"
-  },
-  "apc.stylesheet": {
-    ".quick-input-list .monaco-scrollable-element": {
-      "padding": "0 12px 0 0 !important"
-    },
-    ".quick-input-widget.show-file-icons": {
-      "top": "20% !important"
-    }
-  },
   "banjiao.keymaps": [
     {
       "full": "。",
@@ -244,8 +179,15 @@
   ],
   "banjiao.switch": false,
   "breadcrumbs.filePath": "last",
+  "C_Cpp.doxygen.generateOnType": false,
+  "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+  "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+  "C_Cpp.inlayHints.parameterNames.enabled": true,
+  "C_Cpp.inlayHints.referenceOperator.enabled": true,
+  "C_Cpp.inlayHints.referenceOperator.showSpace": true,
+  "C_Cpp.renameRequiresIdentifier": false,
+  "clang-format.executable": "C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\clang-format.exe",
   "commentTranslate.hover.content": false,
-  "continue.enableTabAutocomplete": false,
   "diffEditor.wordWrap": "off",
   "doxdocgen.c.firstLine": "/********************************************************************",
   "doxdocgen.c.lastLine": " ********************************************************************/",
@@ -291,8 +233,9 @@
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 5,
-  "editor.fontFamily": "Maple Mono NF",
-  // "editor.fontFamily": "Rec Mono Duotone, Monaspace Argon, Jetbrains Mono, Microsoft YaHei Mono, Roboto Mono, Ubuntu Nerd Font Mono, Hack Nerd Font, IBM PLEX MONO, Lilex, Cascadia Code, Consolas, FiraCode Nerd Font Mono, Source Han Sans CN VF",
+  "editor.defaultFormatter": "ms-vscode.cpptools",
+  "editor.fontFamily": "FiraCode Nerd Font, Maple Mono NF CN",
+  // "editor.fontFamily": "Roboto Mono, Rec Mono Semicasual, Monaspace Argon, Jetbrains Mono, Microsoft YaHei Mono, Ubuntu Nerd Font Mono, Hack Nerd Font, IBM PLEX MONO, Lilex, Cascadia Code, Consolas, FiraCode Nerd Font Mono, Source Han Sans CN VF",
   // "editor.fontLigatures": true,
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'calt' ",
   "editor.fontSize": 14,
@@ -307,10 +250,10 @@
   "editor.lightbulb.enabled": "on",
   "editor.lineHeight": 1.4,
   "editor.lineNumbers": "relative",
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": false,
   "editor.minimap.enabled": false,
   "editor.mouseWheelZoom": true,
-  "editor.occurrencesHighlight": "off",
+  "editor.occurrencesHighlight": false,
   "editor.quickSuggestions": {
     "comments": "on",
     "other": "on",
@@ -382,6 +325,9 @@
   //     "</table>",
   // ],
   "editor.wordWrapColumn": 80,
+  "EIDE.ARM.GCC.InstallDirectory": "${userHome}/.eide/tools/gcc_arm",
+  "EIDE.ARM.INI.Path": "E:\\Keil\\UV4\\UV4.exe",
+  "EIDE.C51.INI.Path": "",
   "errorLens.enabled": false,
   "errorLens.enabledDiagnosticLevels": [
     "info",
@@ -404,7 +350,6 @@
   "files.associations": {
     "*.cjson": "jsonc",
     "*.h": "c",
-    "*.m": "matlab",
     "*.wxs": "javascript",
     "*.wxss": "css"
   },
@@ -426,6 +371,7 @@
   },
   "fittencode.languagePreference.commentPreference": "zh-cn",
   "fittencode.languagePreference.displayPreference": "zh-cn",
+  "fittencode.selection.showCodeLens": false,
   "git-graph.graph.colours": [
     "#fabb55",
     "#58a9db",
@@ -456,13 +402,12 @@
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "liveServer.settings.donotShowInfoMsg": true,
   "makefile.configureOnOpen": true,
   "markdown.copyFiles.destination": {
     "**/*.md": "${documentBaseName}.assets/${fileName}"
   },
   "markdown.editor.drop.copyIntoWorkspace": "never",
-  "markdown.preview.fontFamily": "Maple Mono NF",
+  "markdown.preview.fontFamily": "FiraCode Nerd Font",
   "markdownlint.config": {
     "MD025": false,
     "MD033": false
@@ -475,18 +420,20 @@
   "notebook.formatOnSave.enabled": true,
   "notebook.insertFinalNewline": true,
   "notebook.lineNumbers": "on",
-  "notebook.output.fontFamily": "Maple Mono NF",
-  "npm.packageManager": "npm",
+  "notebook.output.fontFamily": "FiraCode Nerd Font",
   "projectManager.sortList": "Recent",
   "redhat.telemetry.enabled": true,
+  "remote.SSH.remotePlatform": {
+    "*.gitpod.io": "linux",
+    "MacMini": "macOS",
+    "zongbao": "linux"
+  },
   "search.quickOpen.includeSymbols": true,
-  "search.useIgnoreFiles": false,
   "security.workspace.trust.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.external.windowsExec": "%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
   "terminal.integrated.commandsToSkipShell": [
-    "github.copilot.terminal.suggestCommand",
-    "matlab.interrupt"
+    "github.copilot.terminal.suggestCommand"
   ],
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
@@ -494,7 +441,7 @@
   "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.env.windows": {},
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font, Maple Mono NF",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontWeight": "450",
   "terminal.integrated.scrollback": 10000,
@@ -2064,12 +2011,28 @@
   "window.menuBarVisibility": "compact",
   "window.restoreWindows": "none",
   "window.title": "${dirty}${remoteName}${separator}${rootNameShort}",
-  "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.activityBar.location": "top",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  "workbench.tree.indent": 16
+  "workbench.tree.indent": 16,
+  "EIDE.STLink.ExePath": "${userHome}/.eide/tools/st_cube_programer/bin/STM32_Programmer_CLI.exe",
+  "vsicons.dontShowNewVersionMessage": true,
+  "remoteHub.commitDirectlyWarning": "off",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[nushell]": {
+    "editor.defaultFormatter": "constneo.vscode-nushell-format"
+  }
 }

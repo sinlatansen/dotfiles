@@ -1,3 +1,4 @@
 helix/config.toml
 vscode/settings.json
 wezterm/.wezterm.lua
+nushell/history*
