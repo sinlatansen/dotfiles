@@ -1,12 +1,7 @@
 alias oc = opencode
-
-def md [] {
-    mkdir
-}
-
-def ll [] {
-    ls -la
-}
+alias md = mkdir
+alias ff = fastfetch
+alias ll = ls -la
 
 def ocweb [] {
     opencode web
@@ -22,17 +17,13 @@ def --env y [...args] {
     rm -fp $tmp
 }
 
-def ff [] {
-    fastfetch
-}
-
 $env.config.show_banner = "short"
-
 $env.config.edit_mode = "vi"
 
 source ~/.config/nushell/scripts/git-completions.nu
 source ~/.config/nushell/scripts/npm-completions.nu
 source ~/.config/nushell/scripts/cargo-completions.nu
+source ~/.config/nushell/scripts/eza-aliases.nu
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
