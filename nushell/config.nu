@@ -20,6 +20,16 @@ def --env y [...args] {
 $env.config.show_banner = "short"
 $env.config.edit_mode = "vi"
 
+let win_path = ($env.Path | split row (char esep))
+$env.PATH = (
+    $env.PATH
+    | append $win_path
+    | append [
+        "F:\\OneDrive\\08.Workspace\\rust\\bin"
+    ]
+    | uniq
+)
+
 source ~/.config/nushell/scripts/git-completions.nu
 source ~/.config/nushell/scripts/npm-completions.nu
 source ~/.config/nushell/scripts/cargo-completions.nu
