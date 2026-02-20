@@ -586,9 +586,16 @@ export extern "cargo add" [
 ]
 
 # Cargo aliases
-export alias "cargo b"  = cargo build
+export alias "cb"  = cargo build
+export alias "cbr"  = cargo build --release
 export alias "cargo c"  = cargo check
 export alias "cargo d"  = cargo doc
-export alias "cargo r"  = cargo run
+export alias "cr"  = cargo run
 export alias "cargo rm" = cargo remove
 export alias "cargo t"  = cargo test
+
+# Create a cargo project
+def cnew [name:string] {
+    cargo new $name
+    cd $name
+}
